@@ -5,10 +5,13 @@
 - Persistence
 
 ## Section 2: Headlining Features
-
+- Task Queue
+- Themes
 
 ## Section 3: Power Ups
-
+- Quotes & Notes
+- Progress Bar
+- Sort By Name & Description
 
 ## Section 3: Power Ups
 
