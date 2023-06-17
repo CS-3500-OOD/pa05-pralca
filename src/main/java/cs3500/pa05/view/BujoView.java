@@ -13,17 +13,17 @@ public class BujoView {
   private final FXMLLoader loader;
 
   /**
-   * Constructs a simple Whack-a-Mole GUI view.
+   * Constructs a simple BuJo GUI view.
    */
   public BujoView(BujoController controller) {
     // look up and store the layout
     this.loader = new FXMLLoader();
-    this.loader.setLocation(getClass().getClassLoader().getResource("pa05gui.fxml"));
+    this.loader.setLocation(getClass().getClassLoader().getResource("mainScene.fxml"));
     this.loader.setController(controller);
   }
 
   /**
-   * Loads a scene from a Whack-a-Mole GUI layout.
+   * Loads a scene from a BuJo GUI layout.
    *
    * @return the layout
    */
