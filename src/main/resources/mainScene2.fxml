@@ -97,9 +97,9 @@
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
          </ButtonBar>
-         <TextField fx:id="monthField" layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="228.0">
+         <TextField fx:id="monthField" alignment="CENTER" layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="228.0">
             <font>
-               <Font name="Futura Medium" size="20.0" />
+               <Font name="Futura Medium" size="24.0" />
             </font>
          </TextField>
          <Text fx:id="weekOfTitle" layoutX="10.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Of: ">
