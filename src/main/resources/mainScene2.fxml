@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
-<<<<<<< HEAD
-=======
-<?import com.gluonhq.charm.glisten.control.ProgressBar?>
->>>>>>> origin/CPham
 <?import javafx.scene.Scene?>
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -18,15 +13,9 @@
 <?import javafx.scene.text.Text?>
 
 <Scene fx:id="mainScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-<<<<<<< HEAD
-    <AnchorPane prefHeight="565.0" prefWidth="1000.0">
-      <children>
-         <Canvas height="600.0" layoutX="-135.0" layoutY="-34.0" width="1125.0" />
-=======
     <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="1006.0">
       <children>
          <Canvas height="600.0" layoutX="-132.0" layoutY="-29.0" width="1125.0" />
->>>>>>> origin/CPham
          <VBox fx:id="Monday" layoutX="5.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
             <children>
                <Rectangle fx:id="monBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
@@ -99,25 +88,9 @@
          </Text>
          <ButtonBar fx:id="taskBar" layoutX="205.0" layoutY="4.0" prefHeight="40.0" prefWidth="792.0">
            <buttons>
-               <DropdownButton fx:id="themes">
-                  <items>
-                     <MenuItem fx:id="theme1" text="Theme 1" />
-                     <MenuItem fx:id="theme2" text="Theme 2" />
-                     <MenuItem fx:id="theme3" text="Theme 3" />
-                  </items>
-               </DropdownButton>
-               <DropdownButton fx:id="noteOrQuote">
-                   <items>
-                       <MenuItem fx:id="noteButton" text="+ Note" />
-                       <MenuItem fx:id="quoteButton" text="+ Quote" />
-                   </items>
-               </DropdownButton>
+               <RadioButton fx:id="themeButton" mnemonicParsing="false" text="Themes" />
                <Button fx:id="taskButton" mnemonicParsing="false" text="+ Task" />
-<<<<<<< HEAD
-               <Button fx:id="eventButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="128.0" text="+ Event" />
-=======
                <Button fx:id="eventButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="+ Event" />
->>>>>>> origin/CPham
                <Button fx:id="openButton" mnemonicParsing="false" text="Open File" />
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
@@ -129,54 +102,22 @@
             </font>
          </Text>
          <TextField fx:id="weekOfField" layoutX="101.0" layoutY="83.0" />
-<<<<<<< HEAD
-=======
          <Button fx:id="taskQueueButton" layoutX="921.0" layoutY="263.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" rotate="90.0" text="Task Queue" />
-         <ProgressBar fx:id="progressTaskBar" layoutX="10.0" layoutY="226.0" prefHeight="16.0" prefWidth="200.0" progress="0.0" />
          <Text fx:id="progressBarTitle" layoutX="10.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress for ">
             <font>
                <Font name="Futura Medium" size="17.0" />
             </font>
          </Text>
-         <DropdownButton fx:id="progressDayDropdown" layoutX="111.0" layoutY="198.0" prefHeight="27.0" prefWidth="90.0">
-             <items>
-                 <MenuItem fx:id="sundayProgress" text="Sunday" />
-                 <MenuItem fx:id="mondayProgress" text="Monday" />
-                 <MenuItem fx:id="tuesdayProgress" text="Tuesday" />
-               <MenuItem fx:id="wednesdayProgress" text="Wednesday" />
-               <MenuItem fx:id="thursdayProgress" text="Thursday" />
-               <MenuItem fx:id="fridayProgress" text="Friday" />
-               <MenuItem fx:id="saturdayProgress" text="Saturday" />
-             </items>
-         </DropdownButton>
          <Text fx:id="sortTitle" layoutX="257.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort">
             <font>
                <Font name="Futura Medium" size="17.0" />
             </font>
          </Text>
-         <DropdownButton fx:id="progressDayDropdown1" layoutX="299.0" layoutY="197.0">
-            <items>
-               <MenuItem fx:id="sunSort" text="Sunday" />
-               <MenuItem fx:id="monSort" text="Monday" />
-               <MenuItem fx:id="tueSort" text="Tuesday" />
-               <MenuItem fx:id="wedSort" text="Wednesday" />
-               <MenuItem fx:id="thuSort" text="Thursday" />
-               <MenuItem fx:id="friSort" text="Friday" />
-               <MenuItem fx:id="satSort" text="Saturday" />
-            </items>
-         </DropdownButton>
          <Text fx:id="byTitle" layoutX="387.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="by">
             <font>
                <Font name="Futura Medium" size="17.0" />
             </font>
          </Text>
-         <DropdownButton fx:id="nameOrDuration" layoutX="428.0" layoutY="197.0" prefHeight="27.0" prefWidth="101.0">
-             <items>
-                 <MenuItem fx:id="sortByName" text="Name" />
-                 <MenuItem fx:id="sortByDuration" text="Duration" />
-             </items>
-         </DropdownButton>
          <Button fx:id="commitmentWarning" layoutX="943.0" layoutY="57.0" minHeight="-Infinity" minWidth="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="0.0" text="!" textFill="WHITE" />
->>>>>>> origin/CPham
       </children></AnchorPane>
 </Scene>
