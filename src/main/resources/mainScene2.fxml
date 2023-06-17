@@ -97,13 +97,20 @@
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
          </ButtonBar>
-         <TextField fx:id="monthField" layoutX="10.0" layoutY="69.0" prefHeight="75.0" prefWidth="228.0" />
+         <TextField fx:id="monthField" layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="228.0">
+            <font>
+               <Font name="Futura Medium" size="20.0" />
+            </font>
+         </TextField>
          <Text fx:id="weekOfTitle" layoutX="10.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Of: ">
             <font>
                <Font name="Futura Medium" size="18.0" />
             </font>
          </Text>
-         <TextField fx:id="weekOfField" layoutX="96.0" layoutY="144.0" />
+         <TextField fx:id="weekOfField" layoutX="96.0" layoutY="144.0">
+            <font>
+               <Font name="Futura Medium" size="13.0" />
+            </font></TextField>
          <Button fx:id="taskQueueButton" layoutX="921.0" layoutY="263.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" rotate="90.0" text="Task Queue" />
          <Text fx:id="progressBarTitle" layoutX="10.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress for ">
             <font>
