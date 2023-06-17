@@ -2,6 +2,9 @@ package cs3500.pa05.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Represents a time in a day.
+ */
 public class Time implements Comparable<Time> {
 
   private int hour;

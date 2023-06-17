@@ -14,6 +14,9 @@ public class Week {
 
   private Theme theme = Theme.DEFAULT;
 
+  /**
+   * Creates a week with the default setings.
+   */
   public Week() {
     this.days = new Day[7];
     this.maxEvents = -1;
@@ -22,6 +25,9 @@ public class Week {
     initDays();
   }
 
+  /**
+   * Populates this week's days with emote days
+   */
   private void initDays() {
     this.days[0] = new Day("Monday");
     this.days[1] = new Day("Tuesday");

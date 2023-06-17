@@ -13,6 +13,9 @@ public class BujoController {
     this.week = week;
   }
 
+  /**
+   * Initializes a game of Java Bullet Journal.
+   */
   public void run() {
     for (Day day : this.week.getDays()) {
       initDay(day);
