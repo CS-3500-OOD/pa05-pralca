@@ -92,7 +92,7 @@
                <RadioButton fx:id="theme2" mnemonicParsing="false" text="Theme 2" />
                <RadioButton fx:id="theme3" mnemonicParsing="false" text="Theme 3" />
                <Button fx:id="taskButton" mnemonicParsing="false" text="+ Task" />
-               <Button fx:id="eventButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="+ Event" />
+               <Button fx:id="eventButton" mnemonicParsing="false" text="+ Event" />
                <Button fx:id="openButton" mnemonicParsing="false" text="Open File" />
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
