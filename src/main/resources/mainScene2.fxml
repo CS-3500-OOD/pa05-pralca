@@ -86,22 +86,24 @@
                <Font name="Futura Medium" size="20.0" />
             </font>
          </Text>
-         <ButtonBar fx:id="taskBar" layoutX="205.0" layoutY="4.0" prefHeight="40.0" prefWidth="792.0">
+         <ButtonBar fx:id="taskBar" layoutX="154.0" layoutY="4.0" prefHeight="40.0" prefWidth="843.0">
            <buttons>
-               <RadioButton fx:id="themeButton" mnemonicParsing="false" text="Themes" />
+               <RadioButton fx:id="theme1" mnemonicParsing="false" text="Theme 1" />
+               <RadioButton fx:id="theme2" mnemonicParsing="false" text="Theme 2" />
+               <RadioButton fx:id="theme3" mnemonicParsing="false" text="Theme 3" />
                <Button fx:id="taskButton" mnemonicParsing="false" text="+ Task" />
                <Button fx:id="eventButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="+ Event" />
                <Button fx:id="openButton" mnemonicParsing="false" text="Open File" />
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
          </ButtonBar>
-         <TextField fx:id="monthField" layoutX="9.0" layoutY="3.0" prefHeight="75.0" prefWidth="228.0" />
-         <Text fx:id="weekOfTitle" layoutX="14.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Of: ">
+         <TextField fx:id="monthField" layoutX="14.0" layoutY="36.0" prefHeight="75.0" prefWidth="228.0" />
+         <Text fx:id="weekOfTitle" layoutX="15.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Of: ">
             <font>
                <Font name="Futura Medium" size="18.0" />
             </font>
          </Text>
-         <TextField fx:id="weekOfField" layoutX="101.0" layoutY="83.0" />
+         <TextField fx:id="weekOfField" layoutX="101.0" layoutY="108.0" />
          <Button fx:id="taskQueueButton" layoutX="921.0" layoutY="263.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" rotate="90.0" text="Task Queue" />
          <Text fx:id="progressBarTitle" layoutX="10.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress for ">
             <font>
