@@ -24,7 +24,7 @@ public class Driver extends Application {
 
     // instantiate a simple welcome GUI view
     Week week = new Week();
-    BujoController controller = new BujoController(week);
+    BujoController controller = new BujoController(week, stage);
     BujoView view = new BujoView(controller);
 
     try {

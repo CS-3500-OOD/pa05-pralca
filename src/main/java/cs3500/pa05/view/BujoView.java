@@ -18,7 +18,7 @@ public class BujoView {
   public BujoView(BujoController controller) {
     // look up and store the layout
     this.loader = new FXMLLoader();
-    this.loader.setLocation(getClass().getClassLoader().getResource("mainScene.fxml"));
+    this.loader.setLocation(getClass().getClassLoader().getResource("mainScene2.fxml"));
     this.loader.setController(controller);
   }
 

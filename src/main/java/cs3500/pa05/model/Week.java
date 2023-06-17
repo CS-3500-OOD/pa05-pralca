@@ -14,8 +14,12 @@ public class Week {
 
   private Theme theme = Theme.DEFAULT;
 
+  private String month = "January";
+
+  private String weekOf = "Jan 1";
+
   /**
-   * Creates a week with the default setings.
+   * Creates a week with the default settings.
    */
   public Week() {
     this.days = new Day[7];
@@ -38,7 +42,19 @@ public class Week {
     this.days[6] = new Day("Sunday");
   }
 
+  /**
+   * Returns the days in this week
+   *
+   * @return the days in this week
+   */
   public Day[] getDays() {
     return this.days;
+  }
+
+  /**
+   * Sets the value of this week's month to the given value
+   */
+  public void setMonth(String month) {
+    this.month = month;
   }
 }
