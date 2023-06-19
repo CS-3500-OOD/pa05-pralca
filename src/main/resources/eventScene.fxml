@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.scene.Scene?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 
 <Scene fx:id="eventScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <AnchorPane prefHeight="200" prefWidth="200">
+    <AnchorPane prefHeight="200" prefWidth="200.0">
       <children>
          <Canvas height="200.0" width="200.0" />
          <Text fx:id="nameTitle" layoutX="1.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name*:">
@@ -20,11 +20,6 @@
             </font>
          </Text>
          <Text fx:id="descriptionTitle" layoutX="1.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description: ">
-            <font>
-               <Font name="Futura Medium" size="10.0" />
-            </font>
-         </Text>
-         <Text fx:id="dayTitle" layoutX="1.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day*:">
             <font>
                <Font name="Futura Medium" size="10.0" />
             </font>
@@ -41,7 +36,7 @@
          </Text>
          <VBox layoutX="50.0" prefHeight="28.0" prefWidth="108.0">
             <children>
-               <Text fx:id="newEventTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Event" textAlignment="CENTER">
+               <Text fx:id="newEventTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Event:" textAlignment="CENTER">
                   <font>
                      <Font name="Futura Medium" size="13.0" />
                   </font>
@@ -58,51 +53,38 @@
                <TextField fx:id="descriptionTextField" prefHeight="33.0" prefWidth="100.0" />
             </children>
          </VBox>
-         <VBox layoutX="60.0" layoutY="96.0" prefHeight="31.0" prefWidth="91.0">
-            <children>
-               <DropdownButton>
-                  <items>
-                     <MenuItem fx:id="sunday" text="Sunday" />
-                     <MenuItem fx:id="monday" text="Monday" />
-                     <MenuItem fx:id="tuesday" text="Tuesday" />
-                     <MenuItem fx:id="wednesday" text="Wednesday" />
-                     <MenuItem fx:id="thursday" text="Thursday" />
-                     <MenuItem fx:id="friday" text="Friday" />
-                     <MenuItem fx:id="saturday" text="Saturday" />
-                  </items>
-               </DropdownButton>
-            </children>
-         </VBox>
          <VBox layoutX="56.0" layoutY="130.0" prefHeight="31.0" prefWidth="74.0">
             <children>
                <TextField fx:id="startTimeField" prefHeight="27.0" prefWidth="74.0" />
             </children>
          </VBox>
-         <VBox layoutX="131.0" layoutY="131.0" prefHeight="24.0" prefWidth="58.0">
-            <children>
-               <DropdownButton prefHeight="21.0" prefWidth="57.0">
-                   <items>
-                       <MenuItem fx:id="amOption" text="AM" />
-                       <MenuItem fx:id="pmOption" text="PM" />
-                   </items>
-               </DropdownButton>
-            </children>
-         </VBox>
-         <VBox layoutX="56.0" layoutY="165.0" prefHeight="31.0" prefWidth="66.0">
-            <children>
-               <TextField fx:id="durationField" prefHeight="27.0" prefWidth="74.0" />
-            </children>
-         </VBox>
-         <VBox layoutX="123.0" layoutY="166.0" prefHeight="30.0" prefWidth="74.0">
-            <children>
-               <DropdownButton prefHeight="27.0" prefWidth="72.0">
-                  <items>
-                     <MenuItem fx:id="days" text="Day(s)" />
-                     <MenuItem fx:id="hours" text="mins" />
-                     <MenuItem fx:id="minutes" text="AM" />
-                  </items>
-               </DropdownButton>
-            </children>
-         </VBox>
+         <TextField fx:id="durationField" layoutX="57.0" layoutY="165.0" prefHeight="27.0" prefWidth="73.0" />
+         <MenuButton fx:id="dayEventBar" layoutX="1.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="158.0" text="Day">
+           <items>
+             <MenuItem fx:id="sunBar" mnemonicParsing="false" text="Sunday" />
+             <MenuItem fx:id="monBar" mnemonicParsing="false" text="Monday" />
+               <MenuItem fx:id="tueBar" mnemonicParsing="false" text="Tuesday" />
+               <MenuItem fx:id="wedBar" mnemonicParsing="false" text="Wednesday" />
+               <MenuItem fx:id="thuBar" mnemonicParsing="false" text="Thursday" />
+               <MenuItem fx:id="friBar" mnemonicParsing="false" text="Friday" />
+               <MenuItem fx:id="satBar" mnemonicParsing="false" text="Saturday" />
+           </items>
+            <font>
+               <Font name="Futura Medium" size="13.0" />
+            </font>
+         </MenuButton>
+         <MenuButton fx:id="amOrPmBar" layoutX="132.0" layoutY="131.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0">
+           <items>
+             <MenuItem fx:id="amOption" mnemonicParsing="false" text="AM" />
+             <MenuItem fx:id="pmOption" mnemonicParsing="false" text="PM" />
+           </items>
+         </MenuButton>
+         <MenuButton fx:id="durationBar" layoutX="132.0" layoutY="167.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0">
+            <items>
+               <MenuItem fx:id="daysOption" mnemonicParsing="false" text="day(s)" />
+               <MenuItem fx:id="hoursOption" mnemonicParsing="false" text="hrs" />
+               <MenuItem fx:id="minOption" mnemonicParsing="false" text="mins" />
+            </items>
+         </MenuButton>
       </children></AnchorPane>
 </Scene>
