@@ -8,6 +8,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -90,9 +91,12 @@
          </Text>
          <ButtonBar fx:id="taskBar" layoutX="154.0" layoutY="4.0" prefHeight="40.0" prefWidth="843.0">
            <buttons>
-               <RadioButton fx:id="theme1" mnemonicParsing="false" text="Theme 1" />
-               <RadioButton fx:id="theme2" mnemonicParsing="false" text="Theme 2" />
-               <RadioButton fx:id="theme3" mnemonicParsing="false" text="Theme 3" />
+               <RadioButton fx:id="theme1" mnemonicParsing="false" text="Theme 1">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="theme" />
+                  </toggleGroup></RadioButton>
+               <RadioButton fx:id="theme2" mnemonicParsing="false" text="Theme 2" toggleGroup="$theme" />
+               <RadioButton fx:id="theme3" mnemonicParsing="false" text="Theme 3" toggleGroup="$theme" />
                <Button fx:id="taskButton" mnemonicParsing="false" text="+ Task" />
                <Button fx:id="eventButton" mnemonicParsing="false" text="+ Event" />
                <Button fx:id="openButton" mnemonicParsing="false" text="Open File" />
@@ -119,12 +123,7 @@
                <Font name="Futura Medium" size="17.0" />
             </font>
          </Text>
-         <Text fx:id="sortTitle" layoutX="257.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort">
-            <font>
-               <Font name="Futura Medium" size="17.0" />
-            </font>
-         </Text>
-         <Text fx:id="byTitle" layoutX="387.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="by">
+         <Text fx:id="sortTitle" layoutX="257.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by">
             <font>
                <Font name="Futura Medium" size="17.0" />
             </font>
@@ -144,25 +143,16 @@
                <Font name="Futura Medium" size="13.0" />
             </font>
          </MenuButton>
-         <MenuButton fx:id="dayEventBar1" layoutX="294.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="89.0" text="Day">
-            <items>
-               <MenuItem fx:id="sunBar1" mnemonicParsing="false" text="Sunday" />
-               <MenuItem fx:id="monBar1" mnemonicParsing="false" text="Monday" />
-               <MenuItem fx:id="tueBar1" mnemonicParsing="false" text="Tuesday" />
-               <MenuItem fx:id="wedBar1" mnemonicParsing="false" text="Wednesday" />
-               <MenuItem fx:id="thuBar1" mnemonicParsing="false" text="Thursday" />
-               <MenuItem fx:id="friBar1" mnemonicParsing="false" text="Friday" />
-               <MenuItem fx:id="satBar1" mnemonicParsing="false" text="Saturday" />
-            </items>
-            <font>
-               <Font name="Futura Medium" size="13.0" />
-            </font>
-         </MenuButton>
-         <MenuButton fx:id="nameOrDuration" layoutX="416.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0">
+         <MenuButton fx:id="nameOrDuration" layoutX="321.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0">
            <items>
              <MenuItem fx:id="nameOpt" mnemonicParsing="false" text="name" />
              <MenuItem fx:id="durationOpt" mnemonicParsing="false" text="duration" />
            </items>
          </MenuButton>
+         <Text fx:id="monthTitle" layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month:">
+            <font>
+               <Font name="Futura Medium" size="18.0" />
+            </font>
+         </Text>
       </children></AnchorPane>
 </Scene>

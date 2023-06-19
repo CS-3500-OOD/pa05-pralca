@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene fx:id="taskQueueScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="185.0">
+      <children>
+         <Canvas height="364.0" layoutX="-2.0" width="193.0" />
+         <Text fx:id="tasksTitle" layoutX="72.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Tasks:">
+            <font>
+               <Font name="Futura Medium" size="13.0" />
+            </font>
+         </Text>
+         <Text fx:id="nameTitle" layoutX="9.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+            <font>
+               <Font name="Futura Medium" size="13.0" />
+            </font>
+         </Text>
+         <TextField layoutX="8.0" layoutY="37.0" prefHeight="316.0" prefWidth="144.0" />
+         <CheckBox fx:id="check1" layoutX="160.0" layoutY="38.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check2" layoutX="160.0" layoutY="60.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check3" layoutX="160.0" layoutY="84.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check4" layoutX="160.0" layoutY="108.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check5" layoutX="160.0" layoutY="132.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check6" layoutX="160.0" layoutY="156.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check7" layoutX="160.0" layoutY="182.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check8" layoutX="160.0" layoutY="208.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check9" layoutX="160.0" layoutY="234.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check10" layoutX="160.0" layoutY="260.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check11" layoutX="160.0" layoutY="286.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check12" layoutX="160.0" layoutY="311.0" mnemonicParsing="false" />
+         <CheckBox fx:id="check13" layoutX="160.0" layoutY="336.0" mnemonicParsing="false" />
+      </children></AnchorPane>
+</Scene>
