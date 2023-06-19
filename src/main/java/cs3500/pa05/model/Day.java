@@ -31,4 +31,22 @@ public class Day {
   public String getName() {
     return this.name;
   }
+
+  /**
+   * Returns this day's tasks.
+   *
+   * @return this day's tasks
+   */
+  public ArrayList<Task> getTasks() {
+    return this.tasks;
+  }
+
+  /**
+   * Returns this day's events.
+   *
+   * @return this day's events
+   */
+  public ArrayList<Event> getEvents() {
+    return this.events;
+  }
 }

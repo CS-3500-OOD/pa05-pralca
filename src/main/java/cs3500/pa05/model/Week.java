@@ -57,4 +57,49 @@ public class Week {
   public void setMonth(String month) {
     this.month = month;
   }
+
+  /**
+   * Returns the max number of events for this week
+   *
+   * @return the max number of events for this week
+   */
+  public int getMaxEvents() {
+    return this.maxEvents;
+  }
+
+  /**
+   * Returns the max number of tasks for this week
+   *
+   * @return the max number of tasks for this week
+   */
+  public int getMaxTasks() {
+    return this.maxTasks;
+  }
+
+  /**
+   * Returns the theme of this week
+   *
+   * @return the theme of this week
+   */
+  public Theme getTheme() {
+    return this.theme;
+  }
+
+  /**
+   * Returns the month of this week
+   *
+   * @return the month of this week
+   */
+  public String getMonth() {
+    return this.month;
+  }
+
+  /**
+   * Returns the week of this week
+   *
+   * @return the week of this week
+   */
+  public String getWeekOf() {
+    return this.weekOf;
+  }
 }
