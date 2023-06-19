@@ -119,12 +119,7 @@
                <Font name="Futura Medium" size="17.0" />
             </font>
          </Text>
-         <Text fx:id="sortTitle" layoutX="257.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort">
-            <font>
-               <Font name="Futura Medium" size="17.0" />
-            </font>
-         </Text>
-         <Text fx:id="byTitle" layoutX="387.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="by">
+         <Text fx:id="sortTitle" layoutX="257.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by">
             <font>
                <Font name="Futura Medium" size="17.0" />
             </font>
@@ -144,25 +139,16 @@
                <Font name="Futura Medium" size="13.0" />
             </font>
          </MenuButton>
-         <MenuButton fx:id="dayEventBar1" layoutX="294.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="89.0" text="Day">
-            <items>
-               <MenuItem fx:id="sunBar1" mnemonicParsing="false" text="Sunday" />
-               <MenuItem fx:id="monBar1" mnemonicParsing="false" text="Monday" />
-               <MenuItem fx:id="tueBar1" mnemonicParsing="false" text="Tuesday" />
-               <MenuItem fx:id="wedBar1" mnemonicParsing="false" text="Wednesday" />
-               <MenuItem fx:id="thuBar1" mnemonicParsing="false" text="Thursday" />
-               <MenuItem fx:id="friBar1" mnemonicParsing="false" text="Friday" />
-               <MenuItem fx:id="satBar1" mnemonicParsing="false" text="Saturday" />
-            </items>
-            <font>
-               <Font name="Futura Medium" size="13.0" />
-            </font>
-         </MenuButton>
-         <MenuButton fx:id="nameOrDuration" layoutX="416.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0">
+         <MenuButton fx:id="nameOrDuration" layoutX="321.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0">
            <items>
              <MenuItem fx:id="nameOpt" mnemonicParsing="false" text="name" />
              <MenuItem fx:id="durationOpt" mnemonicParsing="false" text="duration" />
            </items>
          </MenuButton>
+         <Text fx:id="monthTitle" layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month:">
+            <font>
+               <Font name="Futura Medium" size="18.0" />
+            </font>
+         </Text>
       </children></AnchorPane>
 </Scene>
