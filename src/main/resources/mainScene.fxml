@@ -11,7 +11,6 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,41 +18,13 @@
     <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="1006.0">
       <children>
          <Canvas height="600.0" layoutX="-132.0" layoutY="-29.0" width="1125.0" />
-         <VBox fx:id="Monday" layoutX="5.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="monBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Tuesday" layoutX="140.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="tueBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Wednesday" layoutX="274.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="wedBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Thursday" layoutX="408.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="thuBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Friday" layoutX="542.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="friBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Saturday" layoutX="676.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="satBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
-         <VBox fx:id="Sunday" layoutX="810.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0">
-            <children>
-               <Rectangle fx:id="sunBox" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="255.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
-            </children>
-         </VBox>
+         <VBox fx:id="Monday" layoutX="5.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Tuesday" layoutX="140.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Wednesday" layoutX="274.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Thursday" layoutX="408.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Friday" layoutX="542.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Saturday" layoutX="676.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
+         <VBox fx:id="Sunday" layoutX="810.0" layoutY="300.0" prefHeight="200.0" prefWidth="100.0" />
          <Text fx:id="monTitle" layoutX="35.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" textAlignment="CENTER">
             <font>
                <Font name="Futura Medium" size="20.0" />
@@ -129,20 +100,6 @@
             </font>
          </Text>
          <Button fx:id="commitmentWarning" layoutX="943.0" layoutY="57.0" minHeight="-Infinity" minWidth="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="0.0" text="!" />
-         <MenuButton fx:id="dayEventBar" layoutX="107.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="144.0" text="Day">
-            <items>
-               <MenuItem fx:id="sunBar" mnemonicParsing="false" text="Sunday" />
-               <MenuItem fx:id="monBar" mnemonicParsing="false" text="Monday" />
-               <MenuItem fx:id="tueBar" mnemonicParsing="false" text="Tuesday" />
-               <MenuItem fx:id="wedBar" mnemonicParsing="false" text="Wednesday" />
-               <MenuItem fx:id="thuBar" mnemonicParsing="false" text="Thursday" />
-               <MenuItem fx:id="friBar" mnemonicParsing="false" text="Friday" />
-               <MenuItem fx:id="satBar" mnemonicParsing="false" text="Saturday" />
-            </items>
-            <font>
-               <Font name="Futura Medium" size="13.0" />
-            </font>
-         </MenuButton>
          <MenuButton fx:id="nameOrDuration" layoutX="321.0" layoutY="197.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="127.0">
            <items>
              <MenuItem fx:id="nameOpt" mnemonicParsing="false" text="name" />
@@ -154,5 +111,16 @@
                <Font name="Futura Medium" size="18.0" />
             </font>
          </Text>
+         <MenuButton layoutX="113.0" layoutY="198.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Day">
+           <items>
+             <MenuItem fx:id="sunOpt" mnemonicParsing="false" text="Sunday" />
+             <MenuItem fx:id="monOpt" mnemonicParsing="false" text="Monday" />
+               <MenuItem fx:id="tueOpt" mnemonicParsing="false" text="Tuesday" />
+               <MenuItem fx:id="wedOpt" mnemonicParsing="false" text="Wednesday" />
+               <MenuItem fx:id="thuOpt" mnemonicParsing="false" text="Thursday" />
+               <MenuItem fx:id="friOpt" mnemonicParsing="false" text="Friday" />
+               <MenuItem fx:id="satOpt" mnemonicParsing="false" text="Saturday" />
+           </items>
+         </MenuButton>
       </children></AnchorPane>
 </Scene>
