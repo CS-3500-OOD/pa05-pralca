@@ -22,4 +22,31 @@ public abstract class Commitment {
     this.description = description;
     this.day = day;
   }
+
+  /**
+   * Returns the name of this commitment.
+   *
+   * @return the name of this commitment
+   */
+  public String getName() {
+    return this.name;
+  }
+
+  /**
+   * Returns the description of this commitment.
+   *
+   * @return the description of this commitment
+   */
+  public String getDescription() {
+    return this.description;
+  }
+
+  /**
+   * Returns the day of this commitment.
+   *
+   * @return the day of this commitment
+   */
+  public Day getDay() {
+    return this.day;
+  }
 }
