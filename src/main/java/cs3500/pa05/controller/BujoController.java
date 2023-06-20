@@ -1,9 +1,16 @@
 package cs3500.pa05.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import cs3500.pa05.model.Day;
+import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
+import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
 import java.io.IOException;
+import java.util.Scanner;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -81,9 +88,29 @@ public class BujoController {
   @FXML
   private VBox Sunday;
 
+  @FXML
+  private TextField eventNameTextField;
+
+  @FXML
+  private TextField eventDescriptionTextField;
+
+  @FXML
+  private TextField eventStartTimeField;
+
+  @FXML
+  private TextField eventDurationField;
+
   private String taskName;
 
   private String taskDescription;
+
+  private String eventName;
+
+  private String eventDescription;
+
+  private String eventStartTime;
+
+  private String eventDuration;
 
   public BujoController(Week week, Stage stage) {
     this.week = week;
@@ -120,7 +147,21 @@ public class BujoController {
    * Loads a selected .bujo file into a Java Bullet Journal.
    */
   private void loadFile(String filename) {
-    // TODO: Implement
+    StringBuilder file = new StringBuilder();
+    Scanner scanner = new Scanner(filename);
+
+    while (scanner.hasNextLine()) {
+      String line = scanner.nextLine() + "\n";
+      file.append(line);
+    }
+    scanner.close();
+
+    try {
+      JsonNode json = new ObjectMapper().readTree(file.toString());
+      // TODO
+    } catch (JsonProcessingException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -135,7 +176,7 @@ public class BujoController {
    */
   private void addTaskFromPopup() {
 
-    //String selectedDay = this.dayTaskBar.getText();
+    //String selectedDay = this.taskDayTextField.getText();
     String selectedDay = "Monday";
 
     Day day = this.week.getDays()[Day.getDayIndex(selectedDay)];
@@ -146,6 +187,27 @@ public class BujoController {
     Label taskLabel = new Label(task.toString());
     taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
     getVBox(selectedDay).getChildren().add(taskLabel);
+  }
+
+  /**
+   * Adds a task to a Java Bullet Journal.
+   */
+  private void addEventFromPopup() {
+
+    //String selectedDay = this.eventDayTextField.getText();
+    String selectedDay = "Monday";
+
+    Day day = this.week.getDays()[Day.getDayIndex(selectedDay)];
+
+    int hour = Integer.parseInt(this.eventStartTime.split(":")[0]);
+    int minute = Integer.parseInt(this.eventStartTime.split(":")[1]);
+
+    Event event = new Event(this.eventName, this.eventDescription, day, new Time(hour, minute),
+        Integer.parseInt(this.eventDuration));
+    day.addEvent(event);
+
+    Label eventLabel = new Label(event.toString());
+    getVBox(selectedDay).getChildren().add(eventLabel);
   }
 
   /**
@@ -210,6 +272,12 @@ public class BujoController {
       this.descriptionTextField.setOnKeyTyped(
           event -> this.taskDescription = this.descriptionTextField.getText());
 
+      this.eventNameTextField.setOnKeyTyped(
+          event -> this.eventName = this.eventNameTextField.getText());
+      this.eventDescriptionTextField.setOnKeyTyped(
+          event -> this.eventDescription = this.eventDescriptionTextField.getText());
+
+
     } catch (IOException e) {
       System.err.println("Unable to load popup.");
     }
@@ -221,6 +289,9 @@ public class BujoController {
   private void handleHiddenPopup(Button button) {
     if (button == this.taskButton) {
       addTaskFromPopup();
+    }
+    if (button == this.eventButton) {
+      addEventFromPopup();
     }
   }
 
