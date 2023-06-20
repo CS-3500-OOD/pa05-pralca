@@ -28,4 +28,15 @@ public class Event extends Commitment {
     this.startTime = startTime;
     this.duration = duration;
   }
+
+  /**
+   * Returns a string representation of the data stored by this Event object.
+   *
+   * @return a string representation of the data stored by this Event object
+   */
+  @Override
+  public String toString() {
+    return this.getName() + "\n" + this.getDescription() + "\n" + this.startTime.toString() + "\n"
+        + this.duration;
+  }
 }

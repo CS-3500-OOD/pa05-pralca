@@ -38,4 +38,14 @@ public class Time implements Comparable<Time> {
   public int getMinute() {
     return this.minute;
   }
+
+  /**
+   * Returns a string representation of the data stored by this Time object.
+   *
+   * @return a string representation of the data stored by this Time object
+   */
+  @Override
+  public String toString() {
+    return this.hour + ":" + this.minute;
+  }
 }
