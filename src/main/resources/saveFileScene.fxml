@@ -16,22 +16,11 @@
                <Font name="Futura Medium" size="16.0" />
             </font>
          </Text>
-         <Text fx:id="nameOfFile" layoutX="6.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name*:">
+         <Text fx:id="nameOfFile" layoutX="6.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absolute Path:">
             <font>
                <Font name="Futura Medium" size="13.0" />
             </font>
          </Text>
-         <Text fx:id="bujoTitle" layoutX="159.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text=".bujo">
-            <font>
-               <Font name="Futura Medium" size="13.0" />
-            </font>
-         </Text>
-         <Text fx:id="directorySaveName" layoutX="6.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Directory*:">
-            <font>
-               <Font name="Futura Medium" size="13.0" />
-            </font>
-         </Text>
-         <TextField fx:id="nameTextField" layoutX="56.0" layoutY="65.0" prefHeight="26.0" prefWidth="102.0" />
-         <TextField fx:id="directoryTextField" layoutX="79.0" layoutY="97.0" prefHeight="26.0" prefWidth="102.0" />
+         <TextField fx:id="savePath" layoutX="92.0" layoutY="69.0" prefHeight="26.0" prefWidth="102.0" />
       </children></AnchorPane>
 </Scene>
