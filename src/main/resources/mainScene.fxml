@@ -59,44 +59,7 @@
                      <Font name="Futura Medium" size="18.0" />
                   </font>
                </Text>
-               <RadioButton fx:id="sunRadioButton" mnemonicParsing="false" text="Sunday">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-                  <toggleGroup>
-                     <ToggleGroup fx:id="day" />
-                  </toggleGroup>
-               </RadioButton>
-               <RadioButton fx:id="monRadioButton" mnemonicParsing="false" text="Monday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
-               <RadioButton fx:id="tueRadioButton" mnemonicParsing="false" text="Tuesday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
-               <RadioButton fx:id="wedRadioButton" mnemonicParsing="false" text="Wednesday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
-               <RadioButton fx:id="thuRadioButton" mnemonicParsing="false" text="Thursday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
-               <RadioButton fx:id="friRadioButton" mnemonicParsing="false" text="Friday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
-               <RadioButton fx:id="satRadioButton" mnemonicParsing="false" text="Saturday" toggleGroup="$day">
-                  <font>
-                     <Font size="12.0" />
-                  </font>
-               </RadioButton>
+               <TextField />
             </children>
          </VBox>
          <VBox layoutX="576.0" layoutY="70.0" prefHeight="133.0" prefWidth="100.0">
@@ -141,7 +104,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Wednesday" prefHeight="328.0" prefWidth="173.0">
+               <VBox fx:id="Wednesday" prefHeight="328.0" prefWidth="151.0">
                   <children>
                      <Text fx:id="wedTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" textAlignment="CENTER">
                         <font>
@@ -150,7 +113,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Thursday" prefHeight="328.0" prefWidth="164.0">
+               <VBox fx:id="Thursday" prefHeight="328.0" prefWidth="139.0">
                   <children>
                      <Text fx:id="thuTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" textAlignment="CENTER">
                         <font>
@@ -159,7 +122,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Friday" prefHeight="328.0" prefWidth="148.0">
+               <VBox fx:id="Friday" prefHeight="328.0" prefWidth="132.0">
                   <children>
                      <Text fx:id="friTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" textAlignment="CENTER">
                         <font>
