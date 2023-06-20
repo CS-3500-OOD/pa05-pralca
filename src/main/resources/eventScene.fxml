@@ -47,20 +47,20 @@
          </VBox>
          <VBox layoutX="57.0" layoutY="28.0" prefHeight="29.0" prefWidth="96.0">
             <children>
-               <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="95.0" />
+               <TextField fx:id="eventNameTextField" prefHeight="26.0" prefWidth="95.0" />
             </children>
          </VBox>
          <VBox layoutX="55.0" layoutY="60.0" prefHeight="29.0" prefWidth="100.0">
             <children>
-               <TextField fx:id="descriptionTextField" prefHeight="33.0" prefWidth="100.0" />
+               <TextField fx:id="eventDescriptionTextField" prefHeight="33.0" prefWidth="100.0" />
             </children>
          </VBox>
          <VBox layoutX="56.0" layoutY="130.0" prefHeight="31.0" prefWidth="74.0">
             <children>
-               <TextField fx:id="startTimeField" prefHeight="27.0" prefWidth="74.0" />
+               <TextField fx:id="eventStartTimeField" prefHeight="27.0" prefWidth="74.0" />
             </children>
          </VBox>
-         <TextField fx:id="durationField" layoutX="57.0" layoutY="165.0" prefHeight="27.0" prefWidth="73.0" />
+         <TextField fx:id="eventDurationField" layoutX="57.0" layoutY="165.0" prefHeight="27.0" prefWidth="73.0" />
          <MenuButton fx:id="dayEventBar" layoutX="1.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="158.0" text="Day">
            <items>
              <MenuItem fx:id="sunBar" mnemonicParsing="false" text="Sunday" />
@@ -74,19 +74,6 @@
             <font>
                <Font name="Futura Medium" size="13.0" />
             </font>
-         </MenuButton>
-         <MenuButton fx:id="amOrPmBar" layoutX="132.0" layoutY="131.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0">
-           <items>
-             <MenuItem fx:id="amOption" mnemonicParsing="false" text="AM" />
-             <MenuItem fx:id="pmOption" mnemonicParsing="false" text="PM" />
-           </items>
-         </MenuButton>
-         <MenuButton fx:id="durationBar" layoutX="132.0" layoutY="167.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="63.0">
-            <items>
-               <MenuItem fx:id="daysOption" mnemonicParsing="false" text="day(s)" />
-               <MenuItem fx:id="hoursOption" mnemonicParsing="false" text="hrs" />
-               <MenuItem fx:id="minOption" mnemonicParsing="false" text="mins" />
-            </items>
          </MenuButton>
       </children></AnchorPane>
 </Scene>
