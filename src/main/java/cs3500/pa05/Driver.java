@@ -24,13 +24,13 @@ public class Driver extends Application {
 
     // instantiate a simple welcome GUI view
     Week week = new Week();
-    BujoController controller = new BujoController(week);
+    BujoController controller = new BujoController(week, stage);
     BujoView view = new BujoView(controller);
 
     try {
       // load and place the view's scene onto the stage
       Scene scene = view.load();
-      stage.setScene(scene);
+      stage.setScene(scene); // TODO: Failing here
 
       controller.run();
 
