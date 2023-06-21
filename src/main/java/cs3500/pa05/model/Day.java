@@ -82,4 +82,11 @@ public class Day {
   public void addTask(Task task) {
     this.tasks.add(task);
   }
+
+  /**
+   * Adds an event to this day
+   */
+  public void addEvent(Event event) {
+    this.events.add(event);
+  }
 }
