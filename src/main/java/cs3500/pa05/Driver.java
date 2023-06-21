@@ -30,7 +30,7 @@ public class Driver extends Application {
     try {
       // load and place the view's scene onto the stage
       Scene scene = view.load();
-      stage.setScene(scene); // TODO: Failing here
+      stage.setScene(scene);
 
       controller.run();
 
