@@ -49,6 +49,6 @@
                <Font name="Futura Medium" size="10.0" />
             </font>
          </Text>
-         <TextField fx:id="descriptionTextField1" layoutX="27.0" layoutY="105.0" prefHeight="26.0" prefWidth="98.0" />
+         <TextField fx:id="taskDayField" layoutX="27.0" layoutY="105.0" prefHeight="26.0" prefWidth="98.0" />
       </children></AnchorPane>
 </Scene>
