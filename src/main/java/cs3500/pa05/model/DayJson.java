@@ -6,7 +6,7 @@ import cs3500.pa05.model.Task;
 /**
  * Represents a Json view of a day.
  */
-public record DayJson(String name, Task[] tasks, Event[] events) {
+public record DayJson(String name, TaskJson[] tasks, EventJson[] events) {
 
   /**
    * Returns the day represented by this Json
@@ -15,11 +15,11 @@ public record DayJson(String name, Task[] tasks, Event[] events) {
    */
   public Day toDay() {
     Day day = new Day(this.name);
-    for (Task task : this.tasks) {
-      day.addTask(task);
+    for (TaskJson task : this.tasks) {
+      day.addTask(task.toTask());
     }
-    for (Event event : this.events) {
-      day.addEvent(event);
+    for (EventJson event : this.events) {
+      day.addEvent(event.toEvent());
     }
     return day;
   }

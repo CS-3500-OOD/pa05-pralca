@@ -22,7 +22,7 @@ public class Event extends Commitment {
    * @param duration    the duration of the event
    */
   public Event(@JsonProperty("name") String name, @JsonProperty("description") String description,
-               @JsonProperty("day") Day day, @JsonProperty("start-time") Time startTime,
+               @JsonProperty("day") String day, @JsonProperty("start-time") Time startTime,
                @JsonProperty("duration") int duration) {
     super(name, description, day);
     this.startTime = startTime;
@@ -47,5 +47,14 @@ public class Event extends Commitment {
    */
   public Time getStartTime() {
     return startTime;
+  }
+
+  /**
+   * Returns the duration of this Event
+   *
+   * @return the duration of this Event
+   */
+  public int getDuration() {
+    return duration;
   }
 }

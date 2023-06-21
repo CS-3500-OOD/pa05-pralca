@@ -4,11 +4,11 @@ package cs3500.pa05.model;
  * Represents a commitment in a day.
  */
 public abstract class Commitment {
-  private String name;
+  public String name;
 
-  private String description;
+  public String description;
 
-  private Day day;
+  public String day;
 
   /**
    * Constructs a commitment with the given name, description, and day.
@@ -17,7 +17,7 @@ public abstract class Commitment {
    * @param description the commitment's description
    * @param day         the day of the commitment
    */
-  public Commitment(String name, String description, Day day) {
+  public Commitment(String name, String description, String day) {
     this.name = name;
     this.description = description;
     this.day = day;
@@ -46,7 +46,7 @@ public abstract class Commitment {
    *
    * @return the day of this commitment
    */
-  public Day getDay() {
+  public String getDay() {
     return this.day;
   }
 }

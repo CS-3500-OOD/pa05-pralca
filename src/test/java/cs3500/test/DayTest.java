@@ -61,7 +61,7 @@ public class DayTest {
 
   @Test
   public void testAddTask() {
-    Task test = new Task("test", "test", Day.MONDAY);
+    Task test = new Task("test", "test", "Monday");
     day.addTask(test);
     Assertions.assertEquals(1, day.getTasks().size());
   }

@@ -36,8 +36,6 @@ public class Week {
     this.theme = Theme.valueOf(theme);
     this.month = month;
     this.weekOf = weekOf;
-
-    initDays();
   }
 
   /**

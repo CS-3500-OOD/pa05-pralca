@@ -13,6 +13,7 @@ import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
 import cs3500.pa05.view.BujoView;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Scanner;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -238,12 +239,18 @@ public class BujoController {
    */
   private void loadFile(String filename) {
     StringBuilder file = new StringBuilder();
-    Scanner scanner = new Scanner(filename);
+    Scanner scanner = null;
+    try {
+      scanner = new Scanner(Path.of(filename));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
 
     while (scanner.hasNextLine()) {
-      String line = scanner.nextLine() + "\n";
+      String line = scanner.nextLine();
       file.append(line);
     }
+    
     scanner.close();
 
     try {
@@ -298,7 +305,7 @@ public class BujoController {
       this.warningPopup.show(this.stage);
     }
 
-    Task task = new Task(this.taskName, this.taskDescription, day);
+    Task task = new Task(this.taskName, this.taskDescription, day.getName());
     day.addTask(task);
 
     Label taskLabel = new Label(task.toString());
@@ -320,8 +327,9 @@ public class BujoController {
     int hour = Integer.parseInt(this.eventStartTime.split(":")[0]);
     int minute = Integer.parseInt(this.eventStartTime.split(":")[1]);
 
-    Event event = new Event(this.eventName, this.eventDescription, day, new Time(hour, minute),
-        Integer.parseInt(this.eventDuration));
+    Event event =
+        new Event(this.eventName, this.eventDescription, day.getName(), new Time(hour, minute),
+            Integer.parseInt(this.eventDuration));
     day.addEvent(event);
 
     Label eventLabel = new Label(event.toString());
