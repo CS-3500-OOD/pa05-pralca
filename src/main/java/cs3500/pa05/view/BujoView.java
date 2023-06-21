@@ -12,6 +12,14 @@ public class BujoView {
 
   private final FXMLLoader loader;
 
+  private final FXMLLoader taskLoader;
+
+  private final FXMLLoader eventLoader;
+
+  private final FXMLLoader loadFileLoader;
+
+  private final FXMLLoader saveFileLoader;
+
   /**
    * Constructs a simple BuJo GUI view.
    */
@@ -20,6 +28,22 @@ public class BujoView {
     this.loader = new FXMLLoader();
     this.loader.setLocation(getClass().getClassLoader().getResource("mainScene.fxml"));
     this.loader.setController(controller);
+
+    this.taskLoader = new FXMLLoader();
+    this.taskLoader.setLocation(getClass().getClassLoader().getResource("taskScene.fxml"));
+    this.taskLoader.setController(controller);
+
+    this.eventLoader = new FXMLLoader();
+    this.eventLoader.setLocation(getClass().getClassLoader().getResource("eventScene.fxml"));
+    this.eventLoader.setController(controller);
+
+    this.loadFileLoader = new FXMLLoader();
+    this.loadFileLoader.setLocation(getClass().getClassLoader().getResource("openFileScene.fxml"));
+    this.loadFileLoader.setController(controller);
+
+    this.saveFileLoader = new FXMLLoader();
+    this.saveFileLoader.setLocation(getClass().getClassLoader().getResource("saveFileScene.fxml"));
+    this.saveFileLoader.setController(controller);
   }
 
   /**
@@ -31,6 +55,62 @@ public class BujoView {
     // load the layout
     try {
       return this.loader.load();
+    } catch (IOException exc) {
+      throw new IllegalStateException("Unable to load layout.");
+    }
+  }
+
+  /**
+   * Loads a scene from a BuJo GUI layout.
+   *
+   * @return the layout
+   */
+  public Scene loadTask() throws IllegalStateException {
+    // load the layout
+    try {
+      return this.taskLoader.load();
+    } catch (IOException exc) {
+      throw new IllegalStateException("Unable to load layout.");
+    }
+  }
+
+  /**
+   * Loads a scene from a BuJo GUI layout.
+   *
+   * @return the layout
+   */
+  public Scene loadEvent() throws IllegalStateException {
+    // load the layout
+    try {
+      return this.eventLoader.load();
+    } catch (IOException exc) {
+      throw new IllegalStateException("Unable to load layout.");
+    }
+  }
+
+  /**
+   * Loads a scene from a BuJo GUI layout.
+   *
+   * @return the layout
+   */
+  public Scene loadSave() throws IllegalStateException {
+    // load the layout
+    try {
+      return this.saveFileLoader.load();
+    } catch (IOException exc) {
+      throw new IllegalStateException("Unable to load layout.");
+    }
+  }
+
+  /**
+   * Loads a scene from a BuJo GUI layout.
+   *
+   * @return the layout
+   */
+  public Scene loadOpen() throws IllegalStateException {
+    // load the layout
+    try {
+      return this.loadFileLoader.load();
     } catch (IOException exc) {
       throw new IllegalStateException("Unable to load layout.");
     }

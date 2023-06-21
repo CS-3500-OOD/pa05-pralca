@@ -9,6 +9,7 @@ import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
 import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
+import cs3500.pa05.view.BujoView;
 import java.io.IOException;
 import java.util.Scanner;
 import javafx.fxml.FXML;
@@ -112,6 +113,21 @@ public class BujoController {
 
   private String eventDuration;
 
+  private Scene taskScene;
+
+  private Scene eventScene;
+
+  private Scene openFileScene;
+
+  private Scene saveFileScene;
+
+
+  /**
+   * Initializes a controller for a Java Bullet Journal.
+   *
+   * @param week  the week to be displayed
+   * @param stage the stage to be displayed on
+   */
   public BujoController(Week week, Stage stage) {
     this.week = week;
     this.stage = stage;
@@ -123,16 +139,20 @@ public class BujoController {
   public void run() {
 
     this.taskPopup = new Popup();
-    initPopupButton(this.taskButton, this.taskPopup, "taskScene.fxml");
+    this.taskScene = new BujoView(this).loadTask();
+    initPopupButton(this.taskButton, this.taskPopup, this.taskScene);
 
     this.eventPopup = new Popup();
-    initPopupButton(this.eventButton, this.eventPopup, "eventScene.fxml");
+    this.eventScene = new BujoView(this).loadEvent();
+    initPopupButton(this.eventButton, this.eventPopup, this.eventScene);
 
     this.loadFilePopup = new Popup();
-    initPopupButton(this.openButton, this.loadFilePopup, "openFileScene.fxml");
+    this.openFileScene = new BujoView(this).loadOpen();
+    initPopupButton(this.openButton, this.loadFilePopup, this.openFileScene);
 
     this.saveFilePopup = new Popup();
-    initPopupButton(this.saveButton, this.saveFilePopup, "saveFileScene.fxml");
+    this.saveFileScene = new BujoView(this).loadSave();
+    initPopupButton(this.saveButton, this.saveFilePopup, this.saveFileScene);
 
     this.monthField.setText(this.week.getMonth());
     this.monthField.setOnAction(event -> this.week.setMonth(this.monthField.getText()));
@@ -248,39 +268,26 @@ public class BujoController {
   /**
    * Initializes the task button in a Java Bullet Journal.
    */
-  private void initPopupButton(Button button, Popup popup, String popupFilename) {
+  private void initPopupButton(Button button, Popup popup, Scene s) {
     button.setOnAction(event -> showPopup(popup));
 
-    try {
-      FXMLLoader loader =
-          new FXMLLoader(getClass().getClassLoader().getResource(popupFilename));
-      loader.setController(this);
+    popup.getContent().add(s.getRoot());
 
-      Scene s = loader.load();
+    Button b = new Button("Done!");
+    b.setOnAction(e -> popup.hide());
 
-      popup.getContent().add(s.getRoot());
+    popup.getContent().add(b);
+    popup.setOnHidden(e -> handleHiddenPopup(button));
 
-      Button b = new Button("Done!");
-      b.setTranslateX(100);
-      b.setOnAction(e -> popup.hide());
+    this.nameTextField.setOnKeyTyped(
+        event -> this.taskName = this.nameTextField.getText());
+    this.descriptionTextField.setOnKeyTyped(
+        event -> this.taskDescription = this.descriptionTextField.getText());
 
-      popup.getContent().add(b);
-      popup.setOnHidden(e -> handleHiddenPopup(button));
-
-      this.nameTextField.setOnKeyTyped(
-          event -> this.taskName = this.nameTextField.getText());
-      this.descriptionTextField.setOnKeyTyped(
-          event -> this.taskDescription = this.descriptionTextField.getText());
-
-      this.eventNameTextField.setOnKeyTyped(
-          event -> this.eventName = this.eventNameTextField.getText());
-      this.eventDescriptionTextField.setOnKeyTyped(
-          event -> this.eventDescription = this.eventDescriptionTextField.getText());
-
-
-    } catch (IOException e) {
-      System.err.println("Unable to load popup.");
-    }
+//    this.eventNameTextField.setOnKeyTyped(
+//        event -> this.eventName = this.eventNameTextField.getText());
+//    this.eventDescriptionTextField.setOnKeyTyped(
+//        event -> this.eventDescription = this.eventDescriptionTextField.getText());
   }
 
   /**
