@@ -46,6 +46,10 @@ public class Time implements Comparable<Time> {
    */
   @Override
   public String toString() {
-    return this.hour + ":" + this.minute;
+    String m =
+        this.minute < 10 ? 0 + String.valueOf(this.minute) : String.valueOf(this.minute);
+    String h =
+        this.hour < 10 ? 0 + String.valueOf(this.hour) : String.valueOf(this.hour);
+    return h + ":" + m;
   }
 }

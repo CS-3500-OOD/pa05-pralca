@@ -101,6 +101,18 @@ public class BujoController {
   @FXML
   private TextField eventDurationField;
 
+  @FXML
+  private TextField eventDayField;
+
+  @FXML
+  private TextField taskDayField;
+
+  @FXML
+  private TextField commitEventField;
+
+  @FXML
+  private TextField commitTaskField;
+
   private String taskName;
 
   private String taskDescription;
@@ -112,6 +124,10 @@ public class BujoController {
   private String eventStartTime;
 
   private String eventDuration;
+
+  private String taskDay;
+
+  private String eventDay;
 
   private Scene taskScene;
 
@@ -140,10 +156,28 @@ public class BujoController {
 
     this.taskPopup = new Popup();
     this.taskScene = new BujoView(this).loadTask();
+
+    this.nameTextField.setOnKeyTyped(
+        event -> this.taskName = this.nameTextField.getText());
+    this.descriptionTextField.setOnKeyTyped(
+        event -> this.taskDescription = this.descriptionTextField.getText());
+    this.taskDayField.setOnKeyTyped(event -> this.taskDay = this.taskDayField.getText());
+
     initPopupButton(this.taskButton, this.taskPopup, this.taskScene);
 
     this.eventPopup = new Popup();
     this.eventScene = new BujoView(this).loadEvent();
+
+    this.eventNameTextField.setOnKeyTyped(
+        event -> this.eventName = this.eventNameTextField.getText());
+    this.eventDescriptionTextField.setOnKeyTyped(
+        event -> this.eventDescription = this.eventDescriptionTextField.getText());
+    this.eventStartTimeField.setOnKeyTyped(
+        event -> this.eventStartTime = this.eventStartTimeField.getText());
+    this.eventDurationField.setOnKeyTyped(event -> this.eventDuration = this.eventDurationField
+        .getText());
+    this.eventDayField.setOnKeyTyped(event -> this.eventDay = this.eventDayField.getText());
+
     initPopupButton(this.eventButton, this.eventPopup, this.eventScene);
 
     this.loadFilePopup = new Popup();
@@ -195,18 +229,14 @@ public class BujoController {
    * Adds a task to a Java Bullet Journal.
    */
   private void addTaskFromPopup() {
-
-    //String selectedDay = this.taskDayTextField.getText();
-    String selectedDay = "Monday";
-
-    Day day = this.week.getDays()[Day.getDayIndex(selectedDay)];
+    Day day = this.week.getDays()[Day.getDayIndex(this.taskDay)];
 
     Task task = new Task(this.taskName, this.taskDescription, day);
     day.addTask(task);
 
     Label taskLabel = new Label(task.toString());
     taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
-    getVBox(selectedDay).getChildren().add(taskLabel);
+    getVBox(this.taskDay).getChildren().add(taskLabel);
   }
 
   /**
@@ -214,10 +244,7 @@ public class BujoController {
    */
   private void addEventFromPopup() {
 
-    //String selectedDay = this.eventDayTextField.getText();
-    String selectedDay = "Monday";
-
-    Day day = this.week.getDays()[Day.getDayIndex(selectedDay)];
+    Day day = this.week.getDays()[Day.getDayIndex(this.eventDay)];
 
     int hour = Integer.parseInt(this.eventStartTime.split(":")[0]);
     int minute = Integer.parseInt(this.eventStartTime.split(":")[1]);
@@ -227,7 +254,7 @@ public class BujoController {
     day.addEvent(event);
 
     Label eventLabel = new Label(event.toString());
-    getVBox(selectedDay).getChildren().add(eventLabel);
+    getVBox(this.eventDay).getChildren().add(eventLabel);
   }
 
   /**
@@ -278,16 +305,6 @@ public class BujoController {
 
     popup.getContent().add(b);
     popup.setOnHidden(e -> handleHiddenPopup(button));
-
-    this.nameTextField.setOnKeyTyped(
-        event -> this.taskName = this.nameTextField.getText());
-    this.descriptionTextField.setOnKeyTyped(
-        event -> this.taskDescription = this.descriptionTextField.getText());
-
-//    this.eventNameTextField.setOnKeyTyped(
-//        event -> this.eventName = this.eventNameTextField.getText());
-//    this.eventDescriptionTextField.setOnKeyTyped(
-//        event -> this.eventDescription = this.eventDescriptionTextField.getText());
   }
 
   /**
