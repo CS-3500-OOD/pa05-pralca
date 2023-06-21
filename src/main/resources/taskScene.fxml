@@ -12,7 +12,7 @@
 <Scene fx:id="taskScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="193.0">
       <children>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffdefd" height="163.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
          <Canvas height="171.0" width="195.0" />
          <Text fx:id="nameTitle" layoutX="3.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name*:">
             <font>
