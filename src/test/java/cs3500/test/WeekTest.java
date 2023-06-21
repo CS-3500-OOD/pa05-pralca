@@ -1,5 +1,7 @@
 package cs3500.test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Theme;
 import cs3500.pa05.model.Week;
@@ -58,7 +60,7 @@ public class WeekTest {
 
   @Test
   public void testAddDay() {
-    Week week = new Week();
+    Week week = new Week("test");
     // Create a Day object for testing
     Day day = new Day("Monday");
 
@@ -77,11 +79,8 @@ public class WeekTest {
 
     // Fill up the week with dummy days
     for (int i = 0; i < week.getDays().length; i++) {
-      week.addDay(new Day("Dummy Day"));
+      assertThrows(IllegalStateException.class, () -> week.addDay(new Day("Dummy")));
     }
-
-    // Attempt to add a day when the week is already full
-    week.addDay(day);
   }
 
 }

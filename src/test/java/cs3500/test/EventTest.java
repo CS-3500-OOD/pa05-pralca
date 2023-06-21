@@ -25,7 +25,7 @@ public class EventTest {
     // Assert
     Assertions.assertEquals(name, event.getName());
     Assertions.assertEquals(description, event.getDescription());
-    Assertions.assertEquals(day, event.getDay());
+    Assertions.assertEquals("monday", event.getDay());
   }
 
   @Test
@@ -41,7 +41,7 @@ public class EventTest {
 
   @Test
   public void testToString() {
-    Event event = new Event("Meeting", "Team meeting", Day.MONDAY,
+    Event event = new Event("Meeting", "Team meeting", "Monday",
         new Time(9, 0), 60);
     Assertions.assertEquals("Meeting\nTeam meeting\n09:00\n60", event.toString());
   }

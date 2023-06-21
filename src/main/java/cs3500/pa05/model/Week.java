@@ -29,6 +29,25 @@ public class Week {
     initDays();
   }
 
+  /**
+   * Creates a week with the default settings for testing.
+   */
+  public Week(String test) {
+    this.days = new Day[7];
+    this.maxEvents = -1;
+    this.maxTasks = -1;
+
+  }
+
+  /**
+   * Creates a week with the given settings.
+   *
+   * @param month     the month of this week
+   * @param weekOf    the week of this week
+   * @param maxTasks  the max number of tasks per day
+   * @param maxEvents the max number of events per day
+   * @param theme     the theme of this week
+   */
   public Week(String month, String weekOf, int maxTasks, int maxEvents, String theme) {
     this.days = new Day[7];
     this.maxEvents = maxEvents;
