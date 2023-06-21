@@ -28,7 +28,7 @@ public class Task extends Commitment {
    */
   @Override
   public String toString() {
-    return this.getName() + "\n" + this.getDescription();
+    return this.getName() + "\n" + this.getDescription() + (this.complete ? "[COMPLETE]}" : "");
   }
 
   /**
