@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Scene?>
 <?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -11,10 +10,10 @@
 <?import javafx.scene.text.Text?>
 
 <Scene fx:id="taskScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="182.0">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="193.0">
       <children>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" stroke="BLACK" strokeType="INSIDE" width="182.0" />
-         <Canvas height="171.0" width="181.0" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+         <Canvas height="171.0" width="195.0" />
          <Text fx:id="nameTitle" layoutX="3.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name*:">
             <font>
                <Font name="Futura Medium" size="10.0" />
@@ -25,7 +24,7 @@
                <Font name="Futura Medium" size="10.0" />
             </font>
          </Text>
-         <VBox layoutX="39.0" layoutY="6.0" prefHeight="22.0" prefWidth="108.0">
+         <VBox layoutX="48.0" layoutY="6.0" prefHeight="22.0" prefWidth="99.0">
             <children>
                <Text fx:id="newTaskTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Task" textAlignment="CENTER">
                   <font>
@@ -34,23 +33,22 @@
                </Text>
             </children>
          </VBox>
-         <VBox layoutX="57.0" layoutY="28.0" prefHeight="29.0" prefWidth="96.0">
+         <VBox layoutX="42.0" layoutY="28.0" prefHeight="29.0" prefWidth="128.0">
             <children>
-               <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="95.0" />
+               <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="108.0" />
             </children>
          </VBox>
-         <VBox layoutX="55.0" layoutY="60.0" prefHeight="29.0" prefWidth="100.0">
+         <VBox layoutX="58.0" layoutY="60.0" prefHeight="29.0" prefWidth="113.0">
             <children>
-               <TextField fx:id="descriptionTextField" prefHeight="33.0" prefWidth="100.0" />
+               <TextField fx:id="descriptionTextField" prefHeight="29.0" prefWidth="110.0" />
             </children>
          </VBox>
          <VBox layoutX="56.0" layoutY="130.0" prefHeight="31.0" prefWidth="74.0" />
-         <CheckBox fx:id="completeCheckBox" layoutX="3.0" layoutY="137.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" />
          <Text fx:id="dayTaskTitle" layoutX="3.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Day:">
             <font>
                <Font name="Futura Medium" size="10.0" />
             </font>
          </Text>
-         <TextField fx:id="descriptionTextField1" layoutX="35.0" layoutY="105.0" prefHeight="21.0" prefWidth="100.0" />
+         <TextField fx:id="taskDayField" layoutX="27.0" layoutY="105.0" prefHeight="26.0" prefWidth="98.0" />
       </children></AnchorPane>
 </Scene>

@@ -10,14 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <Scene fx:id="mainScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="1006.0">
+    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="1064.0">
       <children>
-         <Canvas height="600.0" layoutX="-132.0" layoutY="-29.0" width="1125.0" />
-         <ButtonBar fx:id="taskBar" layoutX="154.0" layoutY="4.0" prefHeight="40.0" prefWidth="843.0">
+         <Canvas height="594.0" layoutX="-16.0" layoutY="-11.0" width="1036.0" />
+         <ButtonBar fx:id="taskBar" layoutX="168.0" layoutY="4.0" prefHeight="40.0" prefWidth="892.0">
            <buttons>
                <RadioButton fx:id="theme1" mnemonicParsing="false" text="Theme 1">
                   <toggleGroup>
@@ -25,6 +26,8 @@
                   </toggleGroup></RadioButton>
                <RadioButton fx:id="theme2" mnemonicParsing="false" text="Theme 2" toggleGroup="$theme" />
                <RadioButton fx:id="theme3" mnemonicParsing="false" text="Theme 3" toggleGroup="$theme" />
+               <Button fx:id="newNoteButton" mnemonicParsing="false" text="+ Note" />
+               <Button fx:id="newQuoteButton" mnemonicParsing="false" text="+ Quote" />
                <Button fx:id="taskButton" mnemonicParsing="false" text="+ Task" />
                <Button fx:id="eventButton" mnemonicParsing="false" text="+ Event" />
                <Button fx:id="openButton" mnemonicParsing="false" text="Open File" />
@@ -45,8 +48,8 @@
             <font>
                <Font name="Futura Medium" size="13.0" />
             </font></TextField>
-         <Button fx:id="taskQueueButton" layoutX="921.0" layoutY="263.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="117.0" rotate="90.0" text="Task Queue" />
-         <Button fx:id="commitmentWarning" layoutX="943.0" layoutY="57.0" minHeight="-Infinity" minWidth="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="0.0" text="!" />
+         <Button fx:id="taskQueueButton" layoutX="979.0" layoutY="263.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="117.0" rotate="90.0" text="Task Queue" />
+         <Button fx:id="commitmentWarning" layoutX="1008.0" layoutY="52.0" minHeight="-Infinity" minWidth="37.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="0.0" text="!" />
          <Text fx:id="monthTitle" layoutX="10.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Month:">
             <font>
                <Font name="Futura Medium" size="18.0" />
@@ -59,7 +62,10 @@
                      <Font name="Futura Medium" size="18.0" />
                   </font>
                </Text>
-               <TextField />
+               <TextField>
+                  <font>
+                     <Font name="Futura Medium" size="14.0" />
+                  </font></TextField>
             </children>
          </VBox>
          <VBox layoutX="576.0" layoutY="70.0" prefHeight="133.0" prefWidth="100.0">
@@ -84,11 +90,18 @@
                </RadioButton>
             </children>
          </VBox>
-         <HBox layoutX="24.0" layoutY="213.0" prefHeight="328.0" prefWidth="911.0">
+         <Rectangle fx:id="monBox" arcHeight="5.0" arcWidth="5.0" fill="#ffcdc2" height="363.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="145.0" />
+         <Rectangle fx:id="tueBox" arcHeight="5.0" arcWidth="5.0" fill="#ffe1c4" height="363.0" layoutX="138.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="157.0" />
+         <Rectangle fx:id="wedBox" arcHeight="5.0" arcWidth="5.0" fill="#fffdc4" height="363.0" layoutX="288.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="157.0" />
+         <Rectangle fx:id="thuBox" arcHeight="5.0" arcWidth="5.0" fill="#d2ffc4" height="363.0" layoutX="438.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="157.0" />
+         <Rectangle fx:id="friBox" arcHeight="5.0" arcWidth="5.0" fill="#b0d2ff" height="363.0" layoutX="585.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="141.0" />
+         <Rectangle fx:id="satBox" arcHeight="5.0" arcWidth="5.0" fill="#dcaaff" height="363.0" layoutX="725.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
+         <Rectangle fx:id="sunBox" arcHeight="5.0" arcWidth="5.0" fill="#ffc4ea" height="363.0" layoutX="866.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="138.0" />
+         <HBox layoutX="4.0" layoutY="213.0" prefHeight="360.0" prefWidth="1041.0">
             <children>
                <VBox fx:id="Monday" prefHeight="328.0" prefWidth="138.0">
                   <children>
-                     <Text fx:id="monTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" textAlignment="CENTER" wrappingWidth="77.0703125">
+                     <Text fx:id="monTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" wrappingWidth="77.0703125">
                         <font>
                            <Font name="Futura Medium" size="20.0" />
                         </font>
@@ -113,7 +126,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Thursday" prefHeight="328.0" prefWidth="139.0">
+               <VBox fx:id="Thursday" prefHeight="360.0" prefWidth="149.0">
                   <children>
                      <Text fx:id="thuTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" textAlignment="CENTER">
                         <font>
@@ -122,7 +135,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Friday" prefHeight="328.0" prefWidth="132.0">
+               <VBox fx:id="Friday" prefHeight="360.0" prefWidth="137.0">
                   <children>
                      <Text fx:id="friTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" textAlignment="CENTER">
                         <font>
@@ -140,7 +153,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Sunday" prefHeight="328.0" prefWidth="135.0">
+               <VBox fx:id="Sunday" prefHeight="360.0" prefWidth="137.0">
                   <children>
                      <Text fx:id="sunTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday" textAlignment="CENTER">
                         <font>
