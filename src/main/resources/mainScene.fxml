@@ -4,6 +4,7 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -55,7 +56,7 @@
                <Font name="Futura Medium" size="18.0" />
             </font>
          </Text>
-         <VBox layoutX="433.0" layoutY="68.0" prefHeight="143.0" prefWidth="132.0">
+         <VBox layoutX="433.0" layoutY="68.0" prefHeight="57.0" prefWidth="132.0">
             <children>
                <Text fx:id="progressBarTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress for: ">
                   <font>
@@ -178,6 +179,11 @@
                   </font>
                </Text>
                <TextField fx:id="commitTaskField" promptText="Enter number of tasks" />
+            </children>
+         </VBox>
+         <VBox layoutX="434.0" layoutY="131.0" prefHeight="44.0" prefWidth="132.0">
+            <children>
+               <ProgressBar prefHeight="20.0" prefWidth="131.0" progress="0.0" />
             </children>
          </VBox>
       </children></AnchorPane>
