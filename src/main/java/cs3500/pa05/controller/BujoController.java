@@ -1,5 +1,6 @@
 package cs3500.pa05.controller;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,6 +25,7 @@ import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
+import cs3500.pa05.model.WeekJson;
 
 /**
  * Represents a controller for a Java Bullet Journal
@@ -113,6 +115,10 @@ public class BujoController {
   @FXML
   private TextField commitTaskField;
 
+  private Popup warningPopup;
+
+  private Scene warningScene;
+
   private String taskName;
 
   private String taskDescription;
@@ -156,6 +162,21 @@ public class BujoController {
 
     this.taskPopup = new Popup();
     this.taskScene = new BujoView(this).loadTask();
+
+    this.warningPopup = new Popup();
+    this.warningScene = new BujoView(this).loadWarn();
+
+    warningPopup.getContent().add(this.warningScene.getRoot());
+    Button b = new Button("Done!");
+    b.setOnAction(e -> warningPopup.hide());
+
+    warningPopup.getContent().add(b);
+
+    this.commitEventField.setOnKeyTyped(event -> this.week.setMaxEvents(Integer.parseInt(
+        this.commitEventField.getText())));
+    this.commitTaskField.setOnKeyTyped(event -> this.week.setMaxTasks(Integer.parseInt(
+        this.commitTaskField.getText())));
+
 
     this.nameTextField.setOnKeyTyped(
         event -> this.taskName = this.nameTextField.getText());
@@ -212,7 +233,13 @@ public class BujoController {
 
     try {
       JsonNode json = new ObjectMapper().readTree(file.toString());
-      // TODO
+
+      WeekJson weekJson = new ObjectMapper().convertValue(json, WeekJson.class);
+
+      this.week = weekJson.toWeek();
+
+      // TODO: Update GUI
+
     } catch (JsonProcessingException e) {
       throw new RuntimeException(e);
     }
@@ -231,6 +258,10 @@ public class BujoController {
   private void addTaskFromPopup() {
     Day day = this.week.getDays()[Day.getDayIndex(this.taskDay)];
 
+    if (day.getTasks().size() >= this.week.getMaxTasks()) {
+      this.warningPopup.show(this.stage);
+    }
+
     Task task = new Task(this.taskName, this.taskDescription, day);
     day.addTask(task);
 
@@ -245,6 +276,10 @@ public class BujoController {
   private void addEventFromPopup() {
 
     Day day = this.week.getDays()[Day.getDayIndex(this.eventDay)];
+
+    if (day.getEvents().size() >= this.week.getMaxEvents()) {
+      this.warningPopup.show(this.stage);
+    }
 
     int hour = Integer.parseInt(this.eventStartTime.split(":")[0]);
     int minute = Integer.parseInt(this.eventStartTime.split(":")[1]);

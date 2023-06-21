@@ -29,6 +29,17 @@ public class Week {
     initDays();
   }
 
+  public Week(String month, String weekOf, int maxTasks, int maxEvents, String theme) {
+    this.days = new Day[7];
+    this.maxEvents = maxEvents;
+    this.maxTasks = maxTasks;
+    this.theme = Theme.valueOf(theme);
+    this.month = month;
+    this.weekOf = weekOf;
+
+    initDays();
+  }
+
   /**
    * Populates this week's days with emote days
    */
@@ -102,4 +113,38 @@ public class Week {
   public String getWeekOf() {
     return this.weekOf;
   }
+
+  /**
+   * Sets the max number of events for this week to the given value
+   *
+   * @param maxEvents the new max number of events for this week
+   */
+  public void setMaxEvents(int maxEvents) {
+    this.maxEvents = maxEvents;
+  }
+
+  /**
+   * Sets the max number of tasks for this week to the given value
+   *
+   * @param maxTasks the new max number of tasks for this week
+   */
+  public void setMaxTasks(int maxTasks) {
+    this.maxTasks = maxTasks;
+  }
+
+  /**
+   * Adds the given day to this week
+   *
+   * @param day the day to add to this week
+   */
+  public void addDay(Day day) {
+    for (int i = 0; i < this.days.length; i++) {
+      if (this.days[i] == null) {
+        this.days[i] = day;
+        return;
+      }
+    }
+    throw new IllegalStateException("Week is full");
+  }
+
 }

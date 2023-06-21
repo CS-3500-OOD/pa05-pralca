@@ -20,6 +20,8 @@ public class BujoView {
 
   private final FXMLLoader saveFileLoader;
 
+  private FXMLLoader warningLoader;
+
   /**
    * Constructs a simple BuJo GUI view.
    */
@@ -44,6 +46,10 @@ public class BujoView {
     this.saveFileLoader = new FXMLLoader();
     this.saveFileLoader.setLocation(getClass().getClassLoader().getResource("saveFileScene.fxml"));
     this.saveFileLoader.setController(controller);
+
+    this.warningLoader = new FXMLLoader();
+    this.warningLoader.setLocation(getClass().getClassLoader().getResource("warningScene.fxml"));
+    this.warningLoader.setController(controller);
   }
 
   /**
@@ -111,6 +117,20 @@ public class BujoView {
     // load the layout
     try {
       return this.loadFileLoader.load();
+    } catch (IOException exc) {
+      throw new IllegalStateException("Unable to load layout.");
+    }
+  }
+
+  /**
+   * Loads a scene from a BuJo GUI layout.
+   *
+   * @return the layout
+   */
+  public Scene loadWarn() throws IllegalStateException {
+    // load the layout
+    try {
+      return this.warningLoader.load();
     } catch (IOException exc) {
       throw new IllegalStateException("Unable to load layout.");
     }
