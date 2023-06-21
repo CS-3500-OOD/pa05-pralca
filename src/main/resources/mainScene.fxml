@@ -34,7 +34,7 @@
                <Button fx:id="saveButton" mnemonicParsing="false" text="Save File" />
            </buttons>
          </ButtonBar>
-         <TextField fx:id="monthField" alignment="CENTER" layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="228.0">
+         <TextField fx:id="monthField" alignment="CENTER" layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="228.0" promptText="Enter month">
             <font>
                <Font name="Futura Medium" size="24.0" />
             </font>
@@ -44,7 +44,7 @@
                <Font name="Futura Medium" size="18.0" />
             </font>
          </Text>
-         <TextField fx:id="weekOfField" layoutX="96.0" layoutY="144.0">
+         <TextField fx:id="weekOfField" layoutX="96.0" layoutY="144.0" promptText="Enter start day (ex. 6/19)">
             <font>
                <Font name="Futura Medium" size="13.0" />
             </font></TextField>
@@ -62,7 +62,7 @@
                      <Font name="Futura Medium" size="18.0" />
                   </font>
                </Text>
-               <TextField>
+               <TextField promptText="Enter a day">
                   <font>
                      <Font name="Futura Medium" size="14.0" />
                   </font></TextField>
@@ -171,13 +171,13 @@
                      <Font name="Futura Medium" size="13.0" />
                   </font>
                </Text>
-               <TextField fx:id="commitEventField" />
+               <TextField fx:id="commitEventField" promptText="Enter number of events" />
                <Text fx:id="taskMaxNumTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum Number of Tasks:">
                   <font>
                      <Font name="Futura Medium" size="13.0" />
                   </font>
                </Text>
-               <TextField fx:id="commitTaskField" />
+               <TextField fx:id="commitTaskField" promptText="Enter number of tasks" />
             </children>
          </VBox>
       </children></AnchorPane>
