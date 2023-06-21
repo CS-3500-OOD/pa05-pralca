@@ -164,7 +164,7 @@
                </VBox>
             </children>
          </HBox>
-         <VBox layoutX="658.0" layoutY="68.0" prefHeight="103.0" prefWidth="172.0">
+         <VBox layoutX="658.0" layoutY="74.0" prefHeight="108.0" prefWidth="172.0">
             <children>
                <Text fx:id="eventMaxNumTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum Number of Events:">
                   <font>
