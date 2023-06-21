@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Event extends Commitment {
 
-  private Time startTime;
+  private final Time startTime;
 
   // Duration in minutes
-  private int duration;
+  private final int duration;
 
   /**
    * Constructs an event with the given name, description, day, start time, and duration.
@@ -38,5 +38,14 @@ public class Event extends Commitment {
   public String toString() {
     return this.getName() + "\n" + this.getDescription() + "\n" + this.startTime.toString() + "\n"
         + this.duration;
+  }
+
+  /**
+   * getter method for this startTime
+   *
+   * @return a Time object representing the start time of this event
+   */
+  public Time getStartTime() {
+    return startTime;
   }
 }

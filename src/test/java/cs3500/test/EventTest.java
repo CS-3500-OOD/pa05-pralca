@@ -6,6 +6,9 @@ import cs3500.pa05.model.Time;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class that contains all the methods from the event class
+ */
 public class EventTest {
   @Test
   public void testEventInitialization() {
@@ -34,5 +37,12 @@ public class EventTest {
 
     // Assert the start time is the same
     Assertions.assertEquals(newStartTime.getHour(), event.getStartTime().getHour());
+  }
+
+  @Test
+  public void testToString() {
+    Event event = new Event("Meeting", "Team meeting", Day.MONDAY,
+        new Time(9, 0), 60);
+    Assertions.assertEquals("Meeting\nTeam meeting\n09:00\n60", event.toString());
   }
 }

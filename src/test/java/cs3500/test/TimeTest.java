@@ -33,4 +33,9 @@ public class TimeTest {
     Assertions.assertEquals(0, newTime.compareTo(new Time(10, 20)));
     Assertions.assertNotEquals(0, newTime.compareTo(new Time(10, 30)));
   }
+
+  @Test
+  public void testToString() {
+    Assertions.assertEquals("10:20", newTime.toString());
+  }
 }

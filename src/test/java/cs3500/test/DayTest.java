@@ -13,6 +13,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class that contains tests for all the methods from the day class
+ */
 public class DayTest {
   private Day day;
 
