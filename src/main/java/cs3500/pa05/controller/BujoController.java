@@ -152,7 +152,7 @@ public class BujoController {
   private TextField savePath;
 
   @FXML
-  private TextField openPath;
+  private TextField loadPath;
 
 
   /**
@@ -214,7 +214,7 @@ public class BujoController {
 
     this.loadFilePopup = new Popup();
     this.openFileScene = new BujoView(this).loadOpen();
-    this.openPath.setOnKeyTyped(event -> this.openFilePath = this.openPath.getText());
+    this.loadPath.setOnKeyTyped(event -> this.openFilePath = this.loadPath.getText());
 
     initPopupButton(this.openButton, this.loadFilePopup, this.openFileScene);
 

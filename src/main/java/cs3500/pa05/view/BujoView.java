@@ -20,7 +20,7 @@ public class BujoView {
 
   private final FXMLLoader saveFileLoader;
 
-  private FXMLLoader warningLoader;
+  private final FXMLLoader warningLoader;
 
   /**
    * Constructs a simple BuJo GUI view.

@@ -18,7 +18,7 @@ public class BujoFileWriter {
     }
   }
 
-  private static JsonNode weekToJson(Week week) {
+  public static JsonNode weekToJson(Week week) {
     DayJson[] dayJsons = new DayJson[7];
     Day[] days = week.getDays();
     for (int i = 0; i < 7; i++) {

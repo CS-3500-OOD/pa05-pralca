@@ -18,6 +18,9 @@
                <Font name="Futura Medium" size="16.0" />
             </font>
          </Text>
-         <TextField fx:id="noteTextField" layoutX="25.0" layoutY="30.0" prefHeight="166.0" prefWidth="161.0" />
+         <TextField fx:id="noteTextField" layoutX="25.0" layoutY="30.0" prefHeight="166.0" prefWidth="161.0" promptText="Write a note...">
+            <font>
+               <Font name="Futura Medium" size="13.0" />
+            </font></TextField>
       </children></AnchorPane>
 </Scene>
