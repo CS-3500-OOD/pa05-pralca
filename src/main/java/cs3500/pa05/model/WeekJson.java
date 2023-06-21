@@ -16,4 +16,17 @@ public record WeekJson(@JsonProperty("days") DayJson[] days,
                        @JsonProperty("theme") String theme,
                        @JsonProperty("month") String month,
                        @JsonProperty("week-of") String weekOf) {
+
+  /**
+   * Returns the week represented by this Json
+   *
+   * @return the week represented by this Json
+   */
+  public Week toWeek() {
+    Week week = new Week(this.month, this.weekOf, this.maxTasks, this.maxEvents, this.theme);
+    for (DayJson day : this.days) {
+      week.addDay(day.toDay());
+    }
+    return week;
+  }
 }

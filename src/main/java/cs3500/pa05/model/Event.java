@@ -30,10 +30,13 @@ public class Event extends Commitment {
   }
 
   /**
-   * Getter method for returning the startTime of the event.
-   * @return the start time of the event
+   * Returns a string representation of the data stored by this Event object.
+   *
+   * @return a string representation of the data stored by this Event object
    */
-  public Time getStartTime() {
-      return this.startTime;
+  @Override
+  public String toString() {
+    return this.getName() + "\n" + this.getDescription() + "\n" + this.startTime.toString() + "\n"
+        + this.duration;
   }
 }
