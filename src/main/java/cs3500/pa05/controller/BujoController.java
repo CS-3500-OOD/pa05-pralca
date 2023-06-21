@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import cs3500.pa05.model.BujoFileWriter;
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
@@ -141,7 +142,17 @@ public class BujoController {
 
   private Scene openFileScene;
 
+  private String openFilePath;
+
+  private String saveFilePath;
+
   private Scene saveFileScene;
+
+  @FXML
+  private TextField savePath;
+
+  @FXML
+  private TextField openPath;
 
 
   /**
@@ -203,10 +214,14 @@ public class BujoController {
 
     this.loadFilePopup = new Popup();
     this.openFileScene = new BujoView(this).loadOpen();
+    this.openPath.setOnKeyTyped(event -> this.openFilePath = this.openPath.getText());
+
     initPopupButton(this.openButton, this.loadFilePopup, this.openFileScene);
 
     this.saveFilePopup = new Popup();
     this.saveFileScene = new BujoView(this).loadSave();
+    this.savePath.setOnKeyTyped(event -> this.saveFilePath = this.savePath.getText());
+
     initPopupButton(this.saveButton, this.saveFilePopup, this.saveFileScene);
 
     this.monthField.setText(this.week.getMonth());
@@ -238,10 +253,31 @@ public class BujoController {
 
       this.week = weekJson.toWeek();
 
-      // TODO: Update GUI
+      this.commitEventField.setText(Integer.toString(this.week.getMaxEvents()));
+      this.commitTaskField.setText(Integer.toString(this.week.getMaxTasks()));
+
+      this.monthField.setText(this.week.getMonth());
+      this.weekOfField.setText(this.week.getWeekOf());
+
+      for (Day day : this.week.getDays()) {
+        populateDay(day);
+      }
 
     } catch (JsonProcessingException e) {
       throw new RuntimeException(e);
+    }
+  }
+
+  private void populateDay(Day day) {
+    for (Event event : day.getEvents()) {
+      Label eventLabel = new Label(event.toString());
+      getVBox(day.getName()).getChildren().add(eventLabel);
+    }
+
+    for (Task task : day.getTasks()) {
+      Label taskLabel = new Label(task.toString());
+      taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
+      getVBox(day.getName()).getChildren().add(taskLabel);
     }
   }
 
@@ -249,7 +285,7 @@ public class BujoController {
    * Saves a Java Bullet Journal to a .bujo file.
    */
   private void saveFile(String filename) {
-    // TODO: Implement
+    BujoFileWriter.writeBujo(this.week, filename);
   }
 
   /**
@@ -297,7 +333,7 @@ public class BujoController {
    */
   private void handleLabelClick(Label taskLabel, Task task) {
     task.setComplete(!task.isComplete());
-    taskLabel.setText(task + "\n [COMPLETE]");
+    taskLabel.setText(task.toString());
   }
 
   /**
@@ -351,6 +387,12 @@ public class BujoController {
     }
     if (button == this.eventButton) {
       addEventFromPopup();
+    }
+    if (button == this.openButton) {
+      loadFile(this.openFilePath);
+    }
+    if (button == this.saveButton) {
+      saveFile(this.saveFilePath);
     }
   }
 
