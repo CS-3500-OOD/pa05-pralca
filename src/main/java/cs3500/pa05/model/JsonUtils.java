@@ -19,6 +19,7 @@ public class JsonUtils {
       ObjectMapper mapper = new ObjectMapper();
       return mapper.convertValue(record, JsonNode.class);
     } catch (IllegalArgumentException e) {
+      System.out.println(e);
       throw new IllegalArgumentException("Given record cannot be serialized");
     }
   }

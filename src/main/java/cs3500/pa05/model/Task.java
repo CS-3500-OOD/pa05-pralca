@@ -17,7 +17,7 @@ public class Task extends Commitment {
    * @param day         the day of the task
    */
   public Task(@JsonProperty("name") String name, @JsonProperty("description") String description,
-              @JsonProperty("day") Day day) {
+              @JsonProperty("day") String day) {
     super(name, description, day);
   }
 

@@ -23,6 +23,6 @@
                <Font name="Futura Medium" size="13.0" />
             </font>
          </Text>
-         <TextField fx:id="loadPath" layoutX="61.0" layoutY="87.0" prefHeight="29.0" prefWidth="134.0" promptText="Enter the path..." />
+         <TextField fx:id="loadPath" layoutX="61.0" layoutY="87.0" prefHeight="29.0" prefWidth="134.0" />
       </children></AnchorPane>
 </Scene>

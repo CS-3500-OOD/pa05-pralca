@@ -30,8 +30,23 @@ public class BujoFileWriter {
   }
 
   private static DayJson dayToJson(Day day) {
-    Task[] tasks = day.getTasks().toArray(new Task[0]);
-    Event[] events = day.getEvents().toArray(new Event[0]);
+//    Task[] tasks = day.getTasks().toArray(new Task[0]);
+//    Event[] events = day.getEvents().toArray(new Event[0]);
+
+    TaskJson[] tasks = new TaskJson[day.getTasks().size()];
+    EventJson[] events = new EventJson[day.getEvents().size()];
+
+    for (Task task : day.getTasks()) {
+      tasks[day.getTasks().indexOf(task)] = new TaskJson(task.getName(), task.getDescription(),
+          task.getDay(), task.isComplete());
+    }
+
+    for (Event event : day.getEvents()) {
+      events[day.getEvents().indexOf(event)] = new EventJson(event.getName(),
+          event.getDescription(), event.getDay(),
+          new TimeJson(event.getStartTime().getHour(), event.getStartTime().getMinute()),
+          event.getDuration());
+    }
 
     return new DayJson(day.getName(), tasks, events);
   }

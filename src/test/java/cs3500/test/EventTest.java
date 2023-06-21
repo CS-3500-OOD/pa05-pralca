@@ -20,18 +20,18 @@ public class EventTest {
     int duration = 60;
 
     // Act
-    Event event = new Event(name, description, day, startTime, duration);
+    Event event = new Event(name, description, "monday", startTime, duration);
 
     // Assert
     Assertions.assertEquals(name, event.getName());
     Assertions.assertEquals(description, event.getDescription());
-    Assertions.assertEquals(day, event.getDay());
+    Assertions.assertEquals("monday", event.getDay());
   }
 
   @Test
   public void testEventStartTimeUpdate() {
     // Arrange
-    Event event = new Event("Meeting", "Team meeting", Day.MONDAY,
+    Event event = new Event("Meeting", "Team meeting", "Monday",
         new Time(9, 0), 60);
     Time newStartTime = new Time(9, 0);
 
@@ -41,7 +41,7 @@ public class EventTest {
 
   @Test
   public void testToString() {
-    Event event = new Event("Meeting", "Team meeting", Day.MONDAY,
+    Event event = new Event("Meeting", "Team meeting", "Monday",
         new Time(9, 0), 60);
     Assertions.assertEquals("Meeting\nTeam meeting\n09:00\n60", event.toString());
   }

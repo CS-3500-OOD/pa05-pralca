@@ -6,27 +6,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Class that contains all the methods from the task class
- */
 public class TaskTest {
   private Task newTask;
 
-  /**
-   * Setup method for setting up the model data for the
-   * test
-   */
   @BeforeEach
   public void setup() {
-    this.newTask = new Task("Test on Monday",
+    this.newTask = new Task(
+        "Test on Monday",
         "Study for the test on Monday",
-        new Day("Monday"));
+        "Monday");
   }
 
   @Test
   public void testToString() {
-    Assertions.assertEquals("Test on Monday\nStudy for the test on Monday",
-        this.newTask.toString());
+    Assertions.assertEquals
+        ("Test on Monday\nStudy for the test on Monday", this.newTask.toString());
   }
 
   @Test
