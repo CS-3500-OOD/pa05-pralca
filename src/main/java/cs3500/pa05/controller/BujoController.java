@@ -112,8 +112,6 @@ public class BujoController {
 
     this.weekOfField.setText(this.week.getWeekOf());
     this.weekOfField.setOnAction(event -> this.week.setMonth(this.monthField.getText()));
-
-
   }
 
   /**
