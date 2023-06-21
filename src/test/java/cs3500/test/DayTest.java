@@ -9,6 +9,7 @@ import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
 import java.util.ArrayList;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -52,8 +53,13 @@ public class DayTest {
 
   @Test
   public void testGetDayIndexInvalidName() {
-    assertThrows(IllegalArgumentException.class, () -> {
-      Day.getDayIndex("invalid");
-    });
+    assertThrows(IllegalArgumentException.class, () -> Day.getDayIndex("invalid"));
+  }
+
+  @Test
+  public void testAddTask() {
+    Task test = new Task("test", "test", Day.MONDAY);
+    day.addTask(test);
+    Assertions.assertEquals(1, day.getTasks().size());
   }
 }

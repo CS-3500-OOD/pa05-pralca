@@ -28,4 +28,12 @@ public class Event extends Commitment {
     this.startTime = startTime;
     this.duration = duration;
   }
+
+  /**
+   * Getter method for returning the startTime of the event.
+   * @return the start time of the event
+   */
+  public Time getStartTime() {
+      return this.startTime;
+  }
 }
