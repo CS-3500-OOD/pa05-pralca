@@ -164,5 +164,21 @@
                </VBox>
             </children>
          </HBox>
+         <VBox layoutX="658.0" layoutY="68.0" prefHeight="103.0" prefWidth="172.0">
+            <children>
+               <Text fx:id="eventMaxNumTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum Number of Events:">
+                  <font>
+                     <Font name="Futura Medium" size="13.0" />
+                  </font>
+               </Text>
+               <TextField fx:id="commitEventField" />
+               <Text fx:id="taskMaxNumTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum Number of Tasks:">
+                  <font>
+                     <Font name="Futura Medium" size="13.0" />
+                  </font>
+               </Text>
+               <TextField fx:id="commitTaskField" />
+            </children>
+         </VBox>
       </children></AnchorPane>
 </Scene>
