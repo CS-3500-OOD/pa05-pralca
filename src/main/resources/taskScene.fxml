@@ -35,12 +35,12 @@
          </VBox>
          <VBox layoutX="42.0" layoutY="28.0" prefHeight="29.0" prefWidth="128.0">
             <children>
-               <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="108.0" />
+               <TextField fx:id="nameTextField" prefHeight="26.0" prefWidth="108.0" promptText="Enter a name..." />
             </children>
          </VBox>
-         <VBox layoutX="58.0" layoutY="60.0" prefHeight="29.0" prefWidth="113.0">
+         <VBox layoutX="58.0" layoutY="60.0" prefHeight="29.0" prefWidth="129.0">
             <children>
-               <TextField fx:id="descriptionTextField" prefHeight="29.0" prefWidth="110.0" />
+               <TextField fx:id="descriptionTextField" prefHeight="29.0" prefWidth="124.0" promptText="Enter a description" />
             </children>
          </VBox>
          <VBox layoutX="56.0" layoutY="130.0" prefHeight="31.0" prefWidth="74.0" />
@@ -49,6 +49,6 @@
                <Font name="Futura Medium" size="10.0" />
             </font>
          </Text>
-         <TextField fx:id="taskDayField" layoutX="27.0" layoutY="105.0" prefHeight="26.0" prefWidth="98.0" />
+         <TextField fx:id="taskDayField" layoutX="27.0" layoutY="105.0" prefHeight="26.0" prefWidth="98.0" promptText="Enter the day" />
       </children></AnchorPane>
 </Scene>
