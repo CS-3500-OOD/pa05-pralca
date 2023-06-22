@@ -4,30 +4,26 @@ package cs3500.pa05.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import cs3500.pa05.model.BujoFileWriter;
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
 import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
+import cs3500.pa05.model.WeekJson;
 import cs3500.pa05.view.BujoView;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
-import cs3500.pa05.model.WeekJson;
 
 /**
  * Represents a controller for a Java Bullet Journal
@@ -250,7 +246,7 @@ public class BujoController {
       String line = scanner.nextLine();
       file.append(line);
     }
-    
+
     scanner.close();
 
     try {
@@ -351,24 +347,16 @@ public class BujoController {
    * @return the correct VBox
    */
   private VBox getVBox(String day) {
-    switch (day.toLowerCase()) {
-      case "monday":
-        return this.Monday;
-      case "tuesday":
-        return this.Tuesday;
-      case "wednesday":
-        return this.Wednesday;
-      case "thursday":
-        return this.Thursday;
-      case "friday":
-        return this.Friday;
-      case "saturday":
-        return this.Saturday;
-      case "sunday":
-        return this.Sunday;
-      default:
-        throw new IllegalArgumentException("No such day");
-    }
+    return switch (day.toLowerCase()) {
+      case "monday" -> this.Monday;
+      case "tuesday" -> this.Tuesday;
+      case "wednesday" -> this.Wednesday;
+      case "thursday" -> this.Thursday;
+      case "friday" -> this.Friday;
+      case "saturday" -> this.Saturday;
+      case "sunday" -> this.Sunday;
+      default -> throw new IllegalArgumentException("No such day");
+    };
   }
 
   /**
