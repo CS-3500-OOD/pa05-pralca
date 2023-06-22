@@ -100,7 +100,7 @@
          <Rectangle fx:id="sunBox" arcHeight="5.0" arcWidth="5.0" fill="#ffc4ea" height="363.0" layoutX="866.0" layoutY="209.0" stroke="BLACK" strokeType="INSIDE" width="138.0" />
          <HBox layoutX="4.0" layoutY="213.0" prefHeight="360.0" prefWidth="1041.0">
             <children>
-               <VBox fx:id="Monday" prefHeight="328.0" prefWidth="138.0">
+               <VBox fx:id="monday" prefHeight="328.0" prefWidth="138.0">
                   <children>
                      <Text fx:id="monTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" wrappingWidth="77.0703125">
                         <font>
@@ -109,7 +109,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Tuesday" prefHeight="328.0" prefWidth="149.0">
+               <VBox fx:id="tuesday" prefHeight="328.0" prefWidth="149.0">
                   <children>
                      <Text fx:id="tueTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" textAlignment="CENTER">
                         <font>
@@ -118,7 +118,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Wednesday" prefHeight="328.0" prefWidth="151.0">
+               <VBox fx:id="wednesday" prefHeight="328.0" prefWidth="151.0">
                   <children>
                      <Text fx:id="wedTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" textAlignment="CENTER">
                         <font>
@@ -127,7 +127,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Thursday" prefHeight="360.0" prefWidth="149.0">
+               <VBox fx:id="thursday" prefHeight="360.0" prefWidth="149.0">
                   <children>
                      <Text fx:id="thuTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" textAlignment="CENTER">
                         <font>
@@ -136,7 +136,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Friday" prefHeight="360.0" prefWidth="137.0">
+               <VBox fx:id="friday" prefHeight="360.0" prefWidth="137.0">
                   <children>
                      <Text fx:id="friTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" textAlignment="CENTER">
                         <font>
@@ -145,7 +145,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Saturday" prefHeight="328.0" prefWidth="142.0">
+               <VBox fx:id="saturday" prefHeight="328.0" prefWidth="142.0">
                   <children>
                      <Text fx:id="satTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday" textAlignment="CENTER">
                         <font>
@@ -154,7 +154,7 @@
                      </Text>
                   </children>
                </VBox>
-               <VBox fx:id="Sunday" prefHeight="360.0" prefWidth="137.0">
+               <VBox fx:id="sunday" prefHeight="360.0" prefWidth="137.0">
                   <children>
                      <Text fx:id="sunTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday" textAlignment="CENTER">
                         <font>

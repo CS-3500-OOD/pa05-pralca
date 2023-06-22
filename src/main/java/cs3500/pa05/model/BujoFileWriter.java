@@ -47,7 +47,7 @@ public class BujoFileWriter {
    * @param day the day to convert
    * @return the JsonNode representing the day
    */
-  private static DayJson dayToJson(Day day) {
+  public static DayJson dayToJson(Day day) {
     TaskJson[] tasks = new TaskJson[day.getTasks().size()];
     EventJson[] events = new EventJson[day.getEvents().size()];
 

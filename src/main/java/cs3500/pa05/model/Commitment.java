@@ -4,10 +4,20 @@ package cs3500.pa05.model;
  * Represents a commitment in a day.
  */
 public abstract class Commitment {
+
+  /**
+   * represents the name
+   */
   public String name;
 
+  /**
+   * represents the description
+   */
   public String description;
 
+  /**
+   * represents a day
+   */
   public String day;
 
   /**

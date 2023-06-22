@@ -1,6 +1,5 @@
 package cs3500.test;
 
-import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Time;
 import org.junit.jupiter.api.Assertions;
@@ -15,7 +14,6 @@ public class EventTest {
     // Arrange
     String name = "Meeting";
     String description = "Team meeting";
-    Day day = Day.MONDAY;
     Time startTime = new Time(9, 0); // Assuming Time class is implemented
     int duration = 60;
 
@@ -44,5 +42,12 @@ public class EventTest {
     Event event = new Event("Meeting", "Team meeting", "Monday",
         new Time(9, 0), 60);
     Assertions.assertEquals("Meeting\nTeam meeting\n09:00\n60", event.toString());
+  }
+
+  @Test
+  public void testGetDuration() {
+    Event event = new Event("Meeting", "Team meeting", "Monday",
+        new Time(9, 0), 60);
+    Assertions.assertEquals(60, event.getDuration());
   }
 }

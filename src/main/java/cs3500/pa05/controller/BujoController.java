@@ -61,25 +61,25 @@ public class BujoController {
   private TextField descriptionTextField;
 
   @FXML
-  private VBox Monday;
+  private VBox monday;
 
   @FXML
-  private VBox Tuesday;
+  private VBox tuesday;
 
   @FXML
-  private VBox Wednesday;
+  private VBox wednesday;
 
   @FXML
-  private VBox Thursday;
+  private VBox thursday;
 
   @FXML
-  private VBox Friday;
+  private VBox friday;
 
   @FXML
-  private VBox Saturday;
+  private VBox saturday;
 
   @FXML
-  private VBox Sunday;
+  private VBox sunday;
 
   @FXML
   private TextField eventNameTextField;
@@ -150,9 +150,6 @@ public class BujoController {
    */
   public void run() {
 
-    Popup taskPopup = new Popup();
-    Scene taskScene = new BujoView(this).loadTask();
-
     this.warningPopup = new Popup();
     Scene warningScene = new BujoView(this).loadWarn();
 
@@ -167,6 +164,9 @@ public class BujoController {
     this.commitTaskField.setOnKeyTyped(event -> this.week.setMaxTasks(Integer.parseInt(
         this.commitTaskField.getText())));
 
+    Popup taskPopup = new Popup();
+    Scene taskScene = new BujoView(this).loadTask();
+    initPopupButton(this.taskButton, taskPopup, taskScene);
 
     this.nameTextField.setOnKeyTyped(
         event -> this.taskName = this.nameTextField.getText());
@@ -174,11 +174,9 @@ public class BujoController {
         event -> this.taskDescription = this.descriptionTextField.getText());
     this.taskDayField.setOnKeyTyped(event -> this.taskDay = this.taskDayField.getText());
 
-    initPopupButton(this.taskButton, taskPopup, taskScene);
-
     Popup eventPopup = new Popup();
     Scene eventScene = new BujoView(this).loadEvent();
-
+    initPopupButton(this.eventButton, eventPopup, eventScene);
     this.eventNameTextField.setOnKeyTyped(
         event -> this.eventName = this.eventNameTextField.getText());
     this.eventDescriptionTextField.setOnKeyTyped(
@@ -189,7 +187,6 @@ public class BujoController {
         .getText());
     this.eventDayField.setOnKeyTyped(event -> this.eventDay = this.eventDayField.getText());
 
-    initPopupButton(this.eventButton, eventPopup, eventScene);
 
     Popup loadFilePopup = new Popup();
     Scene openFileScene = new BujoView(this).loadOpen();
@@ -331,19 +328,19 @@ public class BujoController {
   private VBox getVbox(String day) {
     switch (day.toLowerCase()) {
       case "monday":
-        return this.Monday;
+        return this.monday;
       case "tuesday":
-        return this.Tuesday;
+        return this.tuesday;
       case "wednesday":
-        return this.Wednesday;
+        return this.wednesday;
       case "thursday":
-        return this.Thursday;
+        return this.thursday;
       case "friday":
-        return this.Friday;
+        return this.friday;
       case "saturday":
-        return this.Saturday;
+        return this.saturday;
       case "sunday":
-        return this.Sunday;
+        return this.sunday;
       default:
         throw new IllegalArgumentException("No such day");
     }

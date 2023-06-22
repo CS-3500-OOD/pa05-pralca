@@ -24,6 +24,8 @@ public class BujoView {
 
   /**
    * Constructs a simple BuJo GUI view.
+   *
+   * @param controller the controller
    */
   public BujoView(BujoController controller) {
     // look up and store the layout

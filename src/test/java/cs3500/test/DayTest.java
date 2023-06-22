@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
+import cs3500.pa05.model.Time;
 import java.util.ArrayList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -64,5 +65,13 @@ public class DayTest {
     Task test = new Task("test", "test", "Monday");
     day.addTask(test);
     Assertions.assertEquals(1, day.getTasks().size());
+  }
+
+  @Test
+  public void testAddEvent() {
+    Event test = new Event("test", "test", "Monday",
+        new Time(9, 0), 60);
+    day.addEvent(test);
+    Assertions.assertEquals(1, day.getEvents().size());
   }
 }
