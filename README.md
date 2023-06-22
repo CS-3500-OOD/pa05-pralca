@@ -3,6 +3,10 @@ This bullet journal program allows you to write and save task and events for a w
 You can save these to a file for later. This journa also supports adding a limit for how many
 tasks you can have in a day. This is a great way to keep track of your tasks and events for the week!
 
+GUI:
+
+- https://ibb.co/Qk6m2nH
+
 SOLID Principles:
 
 - Single Responsibility Principle: Each class is only responsible for a single job in the bullet
