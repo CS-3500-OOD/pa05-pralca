@@ -4,30 +4,26 @@ package cs3500.pa05.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import cs3500.pa05.model.BujoFileWriter;
 import cs3500.pa05.model.Day;
 import cs3500.pa05.model.Event;
 import cs3500.pa05.model.Task;
 import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
+import cs3500.pa05.model.WeekJson;
 import cs3500.pa05.view.BujoView;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
-import cs3500.pa05.model.WeekJson;
 
 /**
  * Represents a controller for a Java Bullet Journal
@@ -250,7 +246,7 @@ public class BujoController {
       String line = scanner.nextLine();
       file.append(line);
     }
-    
+
     scanner.close();
 
     try {
@@ -278,13 +274,13 @@ public class BujoController {
   private void populateDay(Day day) {
     for (Event event : day.getEvents()) {
       Label eventLabel = new Label(event.toString());
-      getVBox(day.getName()).getChildren().add(eventLabel);
+      getVbox(day.getName()).getChildren().add(eventLabel);
     }
 
     for (Task task : day.getTasks()) {
       Label taskLabel = new Label(task.toString());
       taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
-      getVBox(day.getName()).getChildren().add(taskLabel);
+      getVbox(day.getName()).getChildren().add(taskLabel);
     }
   }
 
@@ -310,7 +306,7 @@ public class BujoController {
 
     Label taskLabel = new Label(task.toString());
     taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
-    getVBox(this.taskDay).getChildren().add(taskLabel);
+    getVbox(this.taskDay).getChildren().add(taskLabel);
   }
 
   /**
@@ -333,7 +329,7 @@ public class BujoController {
     day.addEvent(event);
 
     Label eventLabel = new Label(event.toString());
-    getVBox(this.eventDay).getChildren().add(eventLabel);
+    getVbox(this.eventDay).getChildren().add(eventLabel);
   }
 
   /**
@@ -350,7 +346,7 @@ public class BujoController {
    * @param day the string representing the day
    * @return the correct VBox
    */
-  private VBox getVBox(String day) {
+  private VBox getVbox(String day) {
     switch (day.toLowerCase()) {
       case "monday":
         return this.Monday;
