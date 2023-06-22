@@ -6,7 +6,6 @@ import java.util.ArrayList;
  * Represents a day in a week.
  */
 public class Day {
-  public static Day MONDAY;
   private final String name;
 
   private final ArrayList<Task> tasks;
@@ -53,7 +52,7 @@ public class Day {
 
   /**
    * Returns the index of this day given its name
-   *
+   * @param name of the day
    * @return the index of this day given its name
    */
   public static int getDayIndex(String name) {
@@ -71,6 +70,8 @@ public class Day {
 
   /**
    * Adds a task to this day
+   *
+   * @param task the task
    */
   public void addTask(Task task) {
     this.tasks.add(task);
@@ -78,6 +79,8 @@ public class Day {
 
   /**
    * Adds an event to this day
+   *
+   * @param event the event
    */
   public void addEvent(Event event) {
     this.events.add(event);

@@ -3,6 +3,12 @@ package cs3500.test;
 import static cs3500.pa05.model.BujoFileWriter.weekToJson;
 import static cs3500.pa05.model.BujoFileWriter.writeBujo;
 
+import cs3500.pa05.model.BujoFileWriter;
+import cs3500.pa05.model.Day;
+import cs3500.pa05.model.DayJson;
+import cs3500.pa05.model.Event;
+import cs3500.pa05.model.Task;
+import cs3500.pa05.model.Time;
 import cs3500.pa05.model.Week;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -46,5 +52,31 @@ public class BujoFileWriterTest {
     writeBujo(week, path);
     // Call the method under test and expect an IOException
     //Assertions.assertThrows(IOException.class, () -> writeBujo(week, path));
+  }
+
+  @Test
+  void testDayToJson() {
+    // Create a Day
+    Day day = new Day("Monday");
+
+    // Create a Task
+    Task task = new Task("Task1", "Description1", "Monday");
+    task.setComplete(true);
+    day.getTasks().add(task);
+
+    // Create an Event
+    Event event = new Event("Event1", "Description1", "Monday",
+        new Time(10, 0), 1);
+    day.getEvents().add(event);
+
+    DayJson dayJson = BujoFileWriter.dayToJson(day);
+
+    // Check the DayJson
+    Assertions.assertNotNull(dayJson);
+    Assertions.assertEquals("Monday", dayJson.toDay().getName());
+    Assertions.assertEquals(1, dayJson.toDay().getTasks().size());
+    Assertions.assertEquals("Task1", dayJson.toDay().getTasks().get(0).getName());
+    Assertions.assertEquals(1, dayJson.toDay().getEvents().size());
+    Assertions.assertEquals("Event1", dayJson.toDay().getEvents().get(0).getName());
   }
 }

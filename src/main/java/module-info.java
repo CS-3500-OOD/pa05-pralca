@@ -1,3 +1,6 @@
+/**
+ * Class that contains tests for the Day class
+ */
 module cs3500.pa05 {
   requires javafx.controls;
   requires javafx.fxml;
