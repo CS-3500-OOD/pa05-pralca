@@ -8,12 +8,11 @@ import java.io.IOException;
  * A class that contains methods to write a Bullet Journal to a file.
  */
 public class BujoFileWriter {
-
   /**
-   * method to write a week to a file
+   * Writes a Bullet Journal to a file.
    *
    * @param week the week to write
-   * @param path the path to write
+   * @param path the path to write to
    */
   public static void writeBujo(Week week, String path) {
     try {
@@ -26,10 +25,10 @@ public class BujoFileWriter {
   }
 
   /**
-   * method to convert a week to a JsonNode
+   * Converts a week to a JsonNode.
    *
    * @param week the week to convert
-   * @return the JsonNode representation of the given week
+   * @return the JsonNode representing the week
    */
   public static JsonNode weekToJson(Week week) {
     DayJson[] dayJsons = new DayJson[7];
@@ -43,13 +42,12 @@ public class BujoFileWriter {
   }
 
   /**
-   * Method to convert a day to a JsonNode.
+   * Converts a day to a JsonNode.
    *
    * @param day the day to convert
-   * @return the JsonNode representation of the given day
+   * @return the JsonNode representing the day
    */
   public static DayJson dayToJson(Day day) {
-
     TaskJson[] tasks = new TaskJson[day.getTasks().size()];
     EventJson[] events = new EventJson[day.getEvents().size()];
 

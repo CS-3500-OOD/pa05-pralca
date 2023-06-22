@@ -31,15 +31,7 @@ import javafx.stage.Stage;
 public class BujoController {
   private Week week;
 
-  private Stage stage;
-
-  private Popup taskPopup;
-
-  private Popup eventPopup;
-
-  private Popup loadFilePopup;
-
-  private Popup saveFilePopup;
+  private final Stage stage;
 
   @FXML
   private Button taskButton;
@@ -69,25 +61,25 @@ public class BujoController {
   private TextField descriptionTextField;
 
   @FXML
-  private VBox Monday;
+  private VBox monday;
 
   @FXML
-  private VBox Tuesday;
+  private VBox tuesday;
 
   @FXML
-  private VBox Wednesday;
+  private VBox wednesday;
 
   @FXML
-  private VBox Thursday;
+  private VBox thursday;
 
   @FXML
-  private VBox Friday;
+  private VBox friday;
 
   @FXML
-  private VBox Saturday;
+  private VBox saturday;
 
   @FXML
-  private VBox Sunday;
+  private VBox sunday;
 
   @FXML
   private TextField eventNameTextField;
@@ -115,8 +107,6 @@ public class BujoController {
 
   private Popup warningPopup;
 
-  private Scene warningScene;
-
   private String taskName;
 
   private String taskDescription;
@@ -133,17 +123,9 @@ public class BujoController {
 
   private String eventDay;
 
-  private Scene taskScene;
-
-  private Scene eventScene;
-
-  private Scene openFileScene;
-
   private String openFilePath;
 
   private String saveFilePath;
-
-  private Scene saveFileScene;
 
   @FXML
   private TextField savePath;
@@ -168,13 +150,10 @@ public class BujoController {
    */
   public void run() {
 
-    this.taskPopup = new Popup();
-    this.taskScene = new BujoView(this).loadTask();
-
     this.warningPopup = new Popup();
-    this.warningScene = new BujoView(this).loadWarn();
+    Scene warningScene = new BujoView(this).loadWarn();
 
-    warningPopup.getContent().add(this.warningScene.getRoot());
+    warningPopup.getContent().add(warningScene.getRoot());
     Button b = new Button("Done!");
     b.setOnAction(e -> warningPopup.hide());
 
@@ -185,6 +164,9 @@ public class BujoController {
     this.commitTaskField.setOnKeyTyped(event -> this.week.setMaxTasks(Integer.parseInt(
         this.commitTaskField.getText())));
 
+    Popup taskPopup = new Popup();
+    Scene taskScene = new BujoView(this).loadTask();
+    initPopupButton(this.taskButton, taskPopup, taskScene);
 
     this.nameTextField.setOnKeyTyped(
         event -> this.taskName = this.nameTextField.getText());
@@ -192,11 +174,9 @@ public class BujoController {
         event -> this.taskDescription = this.descriptionTextField.getText());
     this.taskDayField.setOnKeyTyped(event -> this.taskDay = this.taskDayField.getText());
 
-    initPopupButton(this.taskButton, this.taskPopup, this.taskScene);
-
-    this.eventPopup = new Popup();
-    this.eventScene = new BujoView(this).loadEvent();
-
+    Popup eventPopup = new Popup();
+    Scene eventScene = new BujoView(this).loadEvent();
+    initPopupButton(this.eventButton, eventPopup, eventScene);
     this.eventNameTextField.setOnKeyTyped(
         event -> this.eventName = this.eventNameTextField.getText());
     this.eventDescriptionTextField.setOnKeyTyped(
@@ -207,19 +187,18 @@ public class BujoController {
         .getText());
     this.eventDayField.setOnKeyTyped(event -> this.eventDay = this.eventDayField.getText());
 
-    initPopupButton(this.eventButton, this.eventPopup, this.eventScene);
 
-    this.loadFilePopup = new Popup();
-    this.openFileScene = new BujoView(this).loadOpen();
+    Popup loadFilePopup = new Popup();
+    Scene openFileScene = new BujoView(this).loadOpen();
     this.loadPath.setOnKeyTyped(event -> this.openFilePath = this.loadPath.getText());
 
-    initPopupButton(this.openButton, this.loadFilePopup, this.openFileScene);
+    initPopupButton(this.openButton, loadFilePopup, openFileScene);
 
-    this.saveFilePopup = new Popup();
-    this.saveFileScene = new BujoView(this).loadSave();
+    Popup saveFilePopup = new Popup();
+    Scene saveFileScene = new BujoView(this).loadSave();
     this.savePath.setOnKeyTyped(event -> this.saveFilePath = this.savePath.getText());
 
-    initPopupButton(this.saveButton, this.saveFilePopup, this.saveFileScene);
+    initPopupButton(this.saveButton, saveFilePopup, saveFileScene);
 
     this.monthField.setText(this.week.getMonth());
     this.monthField.setOnAction(event -> this.week.setMonth(this.monthField.getText()));
@@ -274,13 +253,13 @@ public class BujoController {
   private void populateDay(Day day) {
     for (Event event : day.getEvents()) {
       Label eventLabel = new Label(event.toString());
-      getVBox(day.getName()).getChildren().add(eventLabel);
+      getVbox(day.getName()).getChildren().add(eventLabel);
     }
 
     for (Task task : day.getTasks()) {
       Label taskLabel = new Label(task.toString());
       taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
-      getVBox(day.getName()).getChildren().add(taskLabel);
+      getVbox(day.getName()).getChildren().add(taskLabel);
     }
   }
 
@@ -306,7 +285,7 @@ public class BujoController {
 
     Label taskLabel = new Label(task.toString());
     taskLabel.setOnMouseClicked(event -> handleLabelClick(taskLabel, task));
-    getVBox(this.taskDay).getChildren().add(taskLabel);
+    getVbox(this.taskDay).getChildren().add(taskLabel);
   }
 
   /**
@@ -329,7 +308,7 @@ public class BujoController {
     day.addEvent(event);
 
     Label eventLabel = new Label(event.toString());
-    getVBox(this.eventDay).getChildren().add(eventLabel);
+    getVbox(this.eventDay).getChildren().add(eventLabel);
   }
 
   /**
@@ -346,17 +325,25 @@ public class BujoController {
    * @param day the string representing the day
    * @return the correct VBox
    */
-  private VBox getVBox(String day) {
-    return switch (day.toLowerCase()) {
-      case "monday" -> this.Monday;
-      case "tuesday" -> this.Tuesday;
-      case "wednesday" -> this.Wednesday;
-      case "thursday" -> this.Thursday;
-      case "friday" -> this.Friday;
-      case "saturday" -> this.Saturday;
-      case "sunday" -> this.Sunday;
-      default -> throw new IllegalArgumentException("No such day");
-    };
+  private VBox getVbox(String day) {
+    switch (day.toLowerCase()) {
+      case "monday":
+        return this.monday;
+      case "tuesday":
+        return this.tuesday;
+      case "wednesday":
+        return this.wednesday;
+      case "thursday":
+        return this.thursday;
+      case "friday":
+        return this.friday;
+      case "saturday":
+        return this.saturday;
+      case "sunday":
+        return this.sunday;
+      default:
+        throw new IllegalArgumentException("No such day");
+    }
   }
 
   /**

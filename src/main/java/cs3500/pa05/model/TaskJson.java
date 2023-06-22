@@ -3,12 +3,12 @@ package cs3500.pa05.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * record for representing a task
+ * Represents a Json view of a Task
  *
- * @param name name of task
- * @param description description of task
- * @param day day of task
- * @param complete whether task is complete
+ * @param name        the name of the task
+ * @param description the description of the task
+ * @param day         the day of the task
+ * @param complete    whether the task is complete
  */
 public record TaskJson(
     @JsonProperty("name") String name,

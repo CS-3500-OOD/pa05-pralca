@@ -52,6 +52,7 @@ public class Day {
 
   /**
    * Returns the index of this day given its name
+   *
    * @param name of the day
    * @return the index of this day given its name
    */

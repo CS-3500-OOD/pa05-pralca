@@ -3,10 +3,10 @@ package cs3500.pa05.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Record for a timeJson object
+ * Represents a Json view of a Time
  *
- * @param hour represents the hour
- * @param minute represents the minute
+ * @param hour   the hour of the time
+ * @param minute the minute of the time
  */
 public record TimeJson(
     @JsonProperty("hour") int hour,
